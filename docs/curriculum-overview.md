@@ -28,7 +28,7 @@
 
 ### **Synchronized SQL & Python Learning**
 
-**Duration:** 6 months | **Schedule:** Aug 6, 2025 - Jan 30, 2026  
+**Duration:** 6 months | **Schedule:** Aug 6, 2025 - Mar 6, 2026  
 **Tools**: VS Code (SQL), Google Colab (Python), Google Looker Studio, Streamlit
 
 #### **Months 2-4: SQL & Python Synchronized (3 months)**
@@ -53,8 +53,8 @@
 | 5 (Nov) | **Google Looker Studio** | Web-based BI dashboards | Create interactive business intelligence dashboards |
 | 6 (Dec) | **Streamlit Development** | Python web applications | Build and deploy interactive data applications |
 
-#### **Month 7: Phase 2 Project (1 month)**
-**Timeline:** January 2026
+#### **Month 7: Phase 2 Project (2 months)**
+**Timeline:** January - March 2026 *(Extended due to Nigerian holidays and December break)*
 - Choose from 5 industry-focused capstone projects
 - Apply SQL, Python, and visualization skills
 - Deliver complete analysis with interactive dashboard
@@ -65,9 +65,10 @@
 
 ### **Career Track Specialization**
 
-**Duration:** 3 months | **Timeline:** Jan-Mar 2026 (overlapping with Phase 2 project)
+**Duration:** 3 months | **Timeline:** Jan-May 2026 (overlapping with Phase 2 project)
 
 #### **Track Selection & Learning (Months 7-8)**
+*(Note: Classes observe Nigerian holidays - October 1, December 25, January 1)*
 
 ### **Track 1: No-Code Automation**
 **Tools**: Zapier, Make.com, Airtable, Power BI
@@ -90,7 +91,7 @@
 - **Skills**: Biomedical data analysis, machine learning for drug discovery, model validation
 
 #### **Month 9: Phase 3 Project (1 month)**
-**Timeline:** March 2026
+**Timeline:** April - May 2026
 - Track-specific capstone project
 - Demonstrate specialization mastery
 - Professional portfolio development
@@ -164,12 +165,12 @@ By graduation, students will:
 - **Final capstone project (25%)**: Specialization-focused portfolio project
 
 ### **Graduation Requirements**
+- Complete all life transformation sessions
 - Complete all Phase 2 core skills with ≥80% average
 - Successfully complete chosen specialization track
 - Deliver professional-quality capstone projects for both phases
 - Demonstrate competency in AI-assisted problem solving
 - Present final project to industry evaluation panel
-
 ---
 
 *This restructured curriculum emphasizes practical, industry-relevant skills with modern AI-assisted development approaches, preparing students for immediate professional impact in their chosen specialization areas.*

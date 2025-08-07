@@ -1,0 +1,30 @@
+{
+  "mcpServers": {
+    "cipher": {
+      "command": "cipher",
+      "args": [
+        "--mode", "mcp",
+        "--agent", "./cipher.yml"
+      ],
+      "env": {
+        "MCP_SERVER_MODE": "default",
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+        "VECTOR_STORE_TYPE": "milvus",
+        "VECTOR_STORE_URL": "https://in03-769f45b67e674d3.serverless.aws-eu-central-1.cloud.zilliz.com",
+        "VECTOR_STORE_API_KEY": "${VECTOR_STORE_API_KEY}",
+        "VECTOR_STORE_USERNAME": "${VECTOR_STORE_USERNAME}",
+        "VECTOR_STORE_PASSWORD": "${VECTOR_STORE_PASSWORD}",
+        "VECTOR_STORE_COLLECTION": "knowledge_memory",
+        "REFLECTION_VECTOR_STORE_COLLECTION": "reflection_memory",
+        "DISABLE_REFLECTION_MEMORY": "false"
+      }
+    },
+    "shadcn-ui": {
+      "command": "npx",
+      "args": ["@jpisnice/shadcn-ui-mcp-server"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    }
+  }
+}

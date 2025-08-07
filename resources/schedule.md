@@ -24,11 +24,11 @@
 **Status:** ✅ Completed - Students have passed placement test
 
 ### Phase 2: Core Skills 
-**Duration:** 6 months (August 6, 2025 - January 30, 2026)
+**Duration:** 6 months (August 6, 2025 - March 6, 2026)
 
 #### Month 2-4: SQL & Python Synchronized (August - October 2025)
 - **August 6 - August 29:** Month 2 Fundamentals
-- **September 3 - September 26:** Month 3 Intermediate
+- **September 3 - September 26:** Month 3 Intermediate *(Note: October 1 - National Day Holiday)*
 - **October 1 - October 31:** Month 4 Advanced
 
 #### Getting Help with AI (November 2025)
@@ -37,20 +37,20 @@
 
 #### Month 5-6: Visualization Tools (November 2025 - December 2025)
 - **November 12 - November 27:** Month 5 Google Looker Studio
-- **December 3 - December 19:** Month 6 Streamlit Development
+- **December 3, 4, 10, 11:** Month 6 Streamlit Development *(Limited December schedule)*
 
-#### Phase 2 Project (January 2026)
-- **January 8 - January 30:** Month 7 Capstone Project
+#### Phase 2 Project (January - March 2026)
+- **January 8 - March 6:** Month 7 Capstone Project *(Extended due to holiday breaks)*
 
 ### Phase 3: Specializations
-**Duration:** 3 months (January - March 2026, overlapping with Phase 2 project)
+**Duration:** 3 months (January - May 2026, overlapping with Phase 2 project)
 
-#### Specialization Learning (January - February 2026)
-- **January 8 - January 30:** Track selection and Month 7 learning (concurrent with Phase 2 project)
-- **February 4 - February 27:** Month 8 specialized skill development
+#### Specialization Learning (January - March 2026)
+- **January 8 - March 6:** Track selection and Month 7 learning (concurrent with Phase 2 project)
+- **March 11 - April 3:** Month 8 specialized skill development
 
-#### Phase 3 Project (March 2026)
-- **March 4 - March 27:** Month 9 Specialization capstone project
+#### Phase 3 Project (April - May 2026)
+- **April 8 - May 1:** Month 9 Specialization capstone project
 
 ## Important Dates
 
@@ -58,20 +58,25 @@
 | Date | Event |
 |------|-------|
 | **August 6, 2025** | Phase 2 begins - SQL & Python fundamentals |
+| **October 1, 2025** | **NIGERIAN HOLIDAY** - National Day (No class) |
 | **October 31, 2025** | Core SQL & Python curriculum complete |
 | **November 5, 2025** | AI troubleshooting curriculum begins |
-| **December 19, 2025** | Visualization tools curriculum complete |
-| **January 8, 2026** | Phase 2 project begins |
+| **December 11, 2025** | Last class before December break |
+| **December 25, 2025** | **NIGERIAN HOLIDAY** - Christmas Day (No class) |
+| **January 1, 2026** | **NIGERIAN HOLIDAY** - New Year's Day (No class) |
+| **January 8, 2026** | Classes resume - Phase 2 project begins |
 | **January 8, 2026** | Phase 3 specialization learning begins |
-| **January 30, 2026** | Phase 2 project presentations |
-| **March 4, 2026** | Phase 3 final project begins |
-| **March 27, 2026** | Program completion & final presentations |
+| **March 6, 2026** | Phase 2 project presentations |
+| **April 8, 2026** | Phase 3 final project begins |
+| **May 1, 2026** | Program completion & final presentations |
 
 ### Holiday Schedule
-*Classes will be adjusted around major holidays:*
-- **Thanksgiving Week:** November 26-28, 2025 (No classes)
-- **Winter Break:** December 23, 2025 - January 2, 2026 (No classes)
-- **Spring Break:** February 17-21, 2026 (No classes)
+*Classes will be adjusted around Nigerian public holidays and breaks:*
+- **October 1, 2025:** National Day (Nigeria) - No class Wednesday
+- **December 12, 2025 - January 7, 2026:** Extended winter break - No classes
+- **December 25, 2025:** Christmas Day (Nigeria) - No class Thursday  
+- **January 1, 2026:** New Year's Day (Nigeria) - No class Wednesday
+- Classes held in December: December 3 (Wed), 4 (Thu), 10 (Wed), 11 (Thu) only
 
 ## Attendance Policy
 

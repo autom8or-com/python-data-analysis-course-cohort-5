@@ -5,8 +5,8 @@ A comprehensive 9-month program that takes students from Excel basics to advance
 ## 🎯 Program Overview
 
 **Duration:** 9 months | **Format:** Live instruction + hands-on practice  
-**Schedule:** Wednesdays & Thursdays, 2 hours each | **Start:** August 6, 2025  
-**Progression:** Excel → SQL & Python → Visualization → Specialization
+**Schedule:** Wednesdays & Thursdays, 2 hours each | **Start:** August 6, 2025 | **Completion:** May 1, 2026  
+**Holidays:** Nigerian public holidays observed | **Progression:** Excel → SQL & Python → Visualization → Specialization
 
 ## 📚 Program Structure
 
@@ -17,14 +17,14 @@ A comprehensive 9-month program that takes students from Excel basics to advance
 - **Requirement:** ≥80% on placement test to advance
 
 ### Phase 2: Core Skills (6 months)
-**[📁 phase-2-core-skills/](phase-2-core-skills/)**
+**[📁 phase-2-core-skills/](phase-2-core-skills/)** | **Timeline:** Aug 2025 - Mar 2026
 - **Months 2-4:** SQL & Python taught simultaneously with same datasets
-- **Months 5-6:** Google Looker Studio & Streamlit development
-- **Month 7:** Major capstone project
+- **Months 5-6:** Google Looker Studio & Streamlit development  
+- **Month 7:** Major capstone project (extended due to holiday breaks)
 - **Special:** AI troubleshooting curriculum for effective problem-solving
 
 ### Phase 3: Specializations (3 months)
-**[📁 phase-3-specializations/](phase-3-specializations/)**
+**[📁 phase-3-specializations/](phase-3-specializations/)** | **Timeline:** Jan - May 2026
 Choose your career track:
 - 🔧 **No-Code Automation** - Zapier, Make.com, Airtable, Power BI
 - 🏗️ **Data Engineering** - Airflow, AWS/GCP, dbt, Snowflake

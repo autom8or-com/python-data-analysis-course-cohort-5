@@ -31,14 +31,15 @@ The repository is organized into three main phases with supporting documentation
 
 ### Phase 2: Core Skills (6 months)
 **Location:** `phase-2-core-skills/`
-**Schedule:** Wednesdays & Thursdays, 2 hours each, starting August 6, 2025
+**Schedule:** Wednesdays & Thursdays, 2 hours each, August 6, 2025 - March 6, 2026
+**Holiday Considerations:** Nigerian holidays observed (October 1, December 25, January 1)
 
 **Structure:**
 - **Months 2-4:** `sql-python-synchronized/` - Learn SQL and Python simultaneously
   - Same concepts taught in both languages using same datasets
   - SQL environment: VS Code | Python environment: Google Colab
 - **Month 5-6:** `visualization-tools/` - Google Looker Studio & Streamlit
-- **Month 7:** `phase-2-projects/` - Major capstone project (1 month)
+- **Month 7:** `phase-2-projects/` - Major capstone project (extended to 2 months due to holiday breaks)
 
 **Special Feature:** `getting-help-with-ai/` - AI troubleshooting curriculum
 - Introduced after Month 4 when core skills are established
@@ -47,7 +48,7 @@ The repository is organized into three main phases with supporting documentation
 
 ### Phase 3: Specializations (3 months, overlapping with Phase 2)
 **Location:** `phase-3-specializations/`
-**Timeline:** Months 7-9 (starts concurrent with Phase 2 project)
+**Timeline:** January 8 - May 1, 2026 (starts concurrent with Phase 2 project)
 
 Four specialized career tracks:
 1. **No-Code Automation** - Zapier, Make.com, Airtable, Power BI
@@ -68,6 +69,7 @@ Choose from 5 industry-focused projects:
 
 ### Phase 3 Projects (Month 9)
 **Location:** `phase-3-specializations/phase-3-projects/`
+**Timeline:** April 8 - May 1, 2026
 Specialization-specific capstone projects (placeholders for detailed development)
 
 ## Important Files by Location
@@ -114,3 +116,11 @@ When working with this repository:
 - AI integration is strategic (after foundational skills are solid)
 - Repository structure supports both instructors and students navigation
 - Project content is detailed and industry-relevant for portfolio development
+
+## Schedule Considerations
+
+- **Class Schedule:** Wednesdays & Thursdays only, 2 hours per session
+- **Nigerian Holidays Observed:** October 1 (National Day), December 25 (Christmas), January 1 (New Year)
+- **December Break:** Classes only December 3, 4, 10, 11 then extended break until January 8, 2026
+- **Program Completion:** May 1, 2026 (extended from original March 27, 2026 due to holiday accommodations)
+- **Total Instructional Impact:** 11 lost sessions accommodated through timeline extension
