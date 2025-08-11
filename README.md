@@ -33,28 +33,35 @@ Choose your career track:
 - 📊 **Advanced Analytics** - AI-driven analytics, advanced modeling
 - 🧬 **ML Drug Discovery** - Pharmaceutical data analysis and prediction
 
-## 🚀 Quick Start
+## 🧭 Navigation Guide
 
-### For Students
-1. **Start Here:** [📚 Curriculum Overview](curriculum/README.md)
-2. **Setup Tools:** [🛠️ Technical Setup](tools-setup/README.md)  
-3. **Current Week:** [Week 1 - Programming Foundations](curriculum/02-phase-2-core-skills/weeks-01-04-fundamentals/week-01-programming-foundations/)
-4. **Get Help:** [👥 Student Resources](student-resources/)
+### 👨‍🎓 **FOR STUDENTS**
+| Need | Go To |
+|------|-------|
+| **This Week's Classes** | [📅 Week 1](curriculum/02-phase-2-core-skills/weeks-01-04-fundamentals/week-01-programming-foundations/) |
+| **Setup Your Tools** | [🛠️ Tools Setup](tools-setup/) |
+| **Download Datasets** | [📊 Datasets](datasets/) |
+| **Study Guides & Help** | [📚 Student Resources](student-resources/) |
+| **All Course Content** | [📖 Full Curriculum](curriculum/) |
 
-### For Instructors
-1. **Admin Guide:** [📋 Instructor Resources](admin/instructors/)
-2. **Content Creation:** [📝 Templates](templates/)
-3. **Current Planning:** [Week 1 Materials](curriculum/02-phase-2-core-skills/weeks-01-04-fundamentals/week-01-programming-foundations/)
+### 👨‍🏫 **FOR TUTORS**
+| Need | Go To |
+|------|-------|
+| **This Week's Lesson Plans** | [📋 Week 1 Materials](curriculum/02-phase-2-core-skills/weeks-01-04-fundamentals/week-01-programming-foundations/) |
+| **Grading & Assessment** | [📊 Admin](admin/) |
+| **Content Templates** | [📝 Templates](templates/) |
+| **Complete Syllabus** | [📚 Detailed Curriculum](curriculum/02-phase-2-core-skills/detailed-curriculum.md) |
+| **Course Schedule** | [📅 24-Week Breakdown](docs/syllabus.md) |
 
 ## 💼 Industry-Ready Projects
 
 ### Phase 2 Projects (Month 7)
 Choose from 5 real-world scenarios:
-- **[Customer Satisfaction Analysis](phase-2-core-skills/phase-2-projects/customer-satisfaction/)** - Amazon review sentiment analysis
-- **[Marketing Channel Effectiveness](phase-2-core-skills/phase-2-projects/marketing-effectiveness/)** - Campaign optimization  
-- **[Product Performance Analysis](phase-2-core-skills/phase-2-projects/product-performance/)** - E-commerce insights
-- **[Seller Optimization](phase-2-core-skills/phase-2-projects/seller-optimization/)** - Marketplace analytics
-- **[Supply Chain Analysis](phase-2-core-skills/phase-2-projects/supply-chain-logistics/)** - Logistics optimization
+- **[Customer Satisfaction Analysis](curriculum/02-phase-2-core-skills/capstone-projects/customer-satisfaction/)** - Amazon review sentiment analysis
+- **[Marketing Channel Effectiveness](curriculum/02-phase-2-core-skills/capstone-projects/marketing-effectiveness/)** - Campaign optimization  
+- **[Product Performance Analysis](curriculum/02-phase-2-core-skills/capstone-projects/product-performance/)** - E-commerce insights
+- **[Seller Optimization](curriculum/02-phase-2-core-skills/capstone-projects/seller-optimization/)** - Marketplace analytics
+- **[Supply Chain Analysis](curriculum/02-phase-2-core-skills/capstone-projects/supply-chain-logistics/)** - Logistics optimization
 
 ### Phase 3 Projects (Month 9)
 Track-specific capstone projects demonstrating specialization mastery
@@ -97,11 +104,11 @@ graph LR
 
 ## 📞 Support & Resources
 
-- **Technical Help:** [AI Troubleshooting Guide](phase-2-core-skills/getting-help-with-ai/)
+- **Technical Help:** [AI Troubleshooting Guide](curriculum/02-phase-2-core-skills/ai-assistance-curriculum/)
 - **Project Templates:** [Standardized Frameworks](templates/)
-- **Setup Support:** [Installation & Configuration](resources/tools-setup.md)
+- **Setup Support:** [Installation & Configuration](tools-setup/)
 - **Community:** Live instruction with peer collaboration
 
 ---
 
-**Ready to transform your data analysis skills?** Start with [📖 Getting Started](docs/getting-started.md) and join the next generation of data professionals.
+**Ready to transform your data analysis skills?** Use the navigation guide above to get started and join the next generation of data professionals.
