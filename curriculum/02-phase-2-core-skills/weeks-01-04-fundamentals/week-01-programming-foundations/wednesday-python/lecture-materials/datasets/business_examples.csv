@@ -1,0 +1,11 @@
+customer_name,city,product_category,order_value,order_date,is_vip,payment_method
+Adebayo Okonkwo,Lagos,Electronics,125000,2024-01-15,True,Card
+Fatima Abdullahi,Abuja,Fashion,45000,2024-01-16,False,Transfer
+Chinedu Okoro,Port Harcourt,Electronics,890000,2024-01-17,True,Card
+Amina Hassan,Kano,Home & Garden,78000,2024-01-18,False,Cash
+Yemi Adeyemi,Ibadan,Books,12000,2024-01-19,False,Transfer
+Kemi Olatunji,Lagos,Fashion,67000,2024-01-20,False,Card
+Ahmed Bello,Abuja,Electronics,340000,2024-01-21,True,Card
+Grace Eze,Kano,Home & Garden,156000,2024-01-22,False,Cash
+Ibrahim Musa,Lagos,Fashion,23000,2024-01-23,False,Transfer
+Tolu Bakare,Ibadan,Books,8500,2024-01-24,False,Transfer
