@@ -141,14 +141,14 @@ AND table_schema = 'olist_sales_data_set';
 #### Part 2: Basic SELECT (like Excel viewing)
 ```sql
 -- This is like opening an Excel file and looking at the first page
-SELECT * FROM olist_sales_data_set.orders LIMIT 10;
+SELECT * FROM olist_sales_data_set.olist_orders_dataset LIMIT 10;
 
 -- This is like selecting specific Excel columns
 SELECT 
     order_id,
     order_status,
     order_purchase_timestamp
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 LIMIT 10;
 ```
 
@@ -160,7 +160,7 @@ WITH business_variables AS (
         COUNT(*) as total_orders,
         COUNT(CASE WHEN order_status = 'delivered' THEN 1 END) as delivered_orders,
         EXTRACT(YEAR FROM CURRENT_DATE) as current_year
-    FROM olist_sales_data_set.orders
+    FROM olist_sales_data_set.olist_orders_dataset
 )
 SELECT 
     total_orders,
@@ -176,7 +176,7 @@ SELECT
     order_id,
     order_status,
     order_purchase_timestamp
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 WHERE order_status = 'delivered'
 LIMIT 20;
 
@@ -185,7 +185,7 @@ SELECT
     order_id,
     order_status,
     order_purchase_timestamp
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 WHERE order_status = 'delivered' 
   AND EXTRACT(YEAR FROM order_purchase_timestamp) = 2018
 LIMIT 20;
@@ -219,7 +219,7 @@ SELECT
         SUM(CASE WHEN order_status = 'delivered' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 
         1
     ) as delivery_rate_percent
-FROM olist_sales_data_set.orders;
+FROM olist_sales_data_set.olist_orders_dataset;
 ```
 
 **Key Learning**: Same logic, different syntax!
@@ -245,10 +245,10 @@ FROM olist_sales_data_set.orders;
 **SQL Version:**
 ```sql
 -- Look at the first 5 orders
-SELECT * FROM olist_sales_data_set.orders LIMIT 5;
+SELECT * FROM olist_sales_data_set.olist_orders_dataset LIMIT 5;
 
 -- Count total orders
-SELECT COUNT(*) as total_orders FROM olist_sales_data_set.orders;
+SELECT COUNT(*) as total_orders FROM olist_sales_data_set.olist_orders_dataset;
 ```
 
 **Python Version:**
@@ -267,7 +267,7 @@ print(f"Total orders: {total_orders}")
 **SQL Version:**
 ```sql
 SELECT COUNT(*) as canceled_orders
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 WHERE order_status = 'canceled';
 ```
 

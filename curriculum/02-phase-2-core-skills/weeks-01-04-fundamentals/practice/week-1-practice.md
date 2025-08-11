@@ -151,7 +151,7 @@ Answer all three questions using both SQL and Python.
 ```sql
 -- Question 1: Count cancelled orders
 SELECT COUNT(*) as cancelled_orders
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 WHERE order_status = 'canceled';
 
 -- Add your code for questions 2 and 3 here

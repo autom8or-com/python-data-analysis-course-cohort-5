@@ -11,14 +11,14 @@ SELECT 'I am connected to the database!' AS connection_message;
 
 -- Exercise 2: First Data View  
 SELECT * 
-FROM olist_sales_data_set.orders 
+FROM olist_sales_data_set.olist_orders_dataset 
 LIMIT 5;
 
 -- Exercise 3: Column Exploration
 SELECT 
     order_id,
     order_status
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 LIMIT 10;
 
 -- =============================================================================
@@ -27,17 +27,17 @@ LIMIT 10;
 
 -- Exercise 4: Total Record Count
 SELECT COUNT(*) AS "Total Orders"
-FROM olist_sales_data_set.orders;
+FROM olist_sales_data_set.olist_orders_dataset;
 -- Expected Result: ~99,441 orders
 
 -- Exercise 5: Customer Count
 SELECT COUNT(*) AS "Total Customers"
-FROM olist_sales_data_set.customers;
+FROM olist_sales_data_set.olist_customers_dataset;
 -- Expected Result: ~99,441 customers
 
 -- Exercise 6: Product Catalog Size
 SELECT COUNT(*) AS "Total Products"
-FROM olist_sales_data_set.products;
+FROM olist_sales_data_set.olist_products_dataset;
 -- Expected Result: ~32,951 products
 
 -- =============================================================================
@@ -49,7 +49,7 @@ SELECT
     order_id,
     order_status,
     order_purchase_timestamp
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 ORDER BY order_purchase_timestamp DESC
 LIMIT 10;
 
@@ -58,7 +58,7 @@ SELECT
     order_id,
     order_status,
     order_purchase_timestamp
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 ORDER BY order_purchase_timestamp ASC
 LIMIT 5;
 
@@ -70,8 +70,8 @@ LIMIT 5;
 SELECT 
     order_status,
     COUNT(*) AS order_count,
-    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM olist_sales_data_set.orders), 2) AS percentage
-FROM olist_sales_data_set.orders
+    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM olist_sales_data_set.olist_orders_dataset), 2) AS percentage
+FROM olist_sales_data_set.olist_orders_dataset
 GROUP BY order_status
 ORDER BY COUNT(*) DESC;
 
@@ -79,7 +79,7 @@ ORDER BY COUNT(*) DESC;
 SELECT 
     customer_state,
     COUNT(*) AS customer_count
-FROM olist_sales_data_set.customers
+FROM olist_sales_data_set.olist_customers_dataset
 GROUP BY customer_state
 ORDER BY COUNT(*) DESC
 LIMIT 10;
@@ -88,8 +88,8 @@ LIMIT 10;
 SELECT 
     payment_type,
     COUNT(*) AS payment_count,
-    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM olist_sales_data_set.payments), 2) AS percentage
-FROM olist_sales_data_set.payments
+    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM olist_sales_data_set.olist_order_payments_dataset), 2) AS percentage
+FROM olist_sales_data_set.olist_order_payments_dataset
 GROUP BY payment_type
 ORDER BY COUNT(*) DESC;
 
@@ -102,7 +102,7 @@ SELECT
     MIN(order_purchase_timestamp) AS "Earliest Order",
     MAX(order_purchase_timestamp) AS "Latest Order",
     MAX(order_purchase_timestamp) - MIN(order_purchase_timestamp) AS "Business Period"
-FROM olist_sales_data_set.orders;
+FROM olist_sales_data_set.olist_orders_dataset;
 
 -- Exercise 13: Payment Value Statistics
 SELECT 
@@ -111,7 +111,7 @@ SELECT
     MAX(payment_value) AS "Maximum Payment",
     ROUND(AVG(payment_value), 2) AS "Average Payment",
     ROUND(SUM(payment_value), 2) AS "Total Revenue"
-FROM olist_sales_data_set.payments;
+FROM olist_sales_data_set.olist_order_payments_dataset;
 
 -- Exercise 14: Missing Data Check
 SELECT 
@@ -119,7 +119,7 @@ SELECT
     COUNT(order_delivered_customer_date) AS "Orders with Delivery Date",
     COUNT(*) - COUNT(order_delivered_customer_date) AS "Missing Delivery Dates",
     ROUND((COUNT(*) - COUNT(order_delivered_customer_date)) * 100.0 / COUNT(*), 2) AS "Missing Percentage"
-FROM olist_sales_data_set.orders;
+FROM olist_sales_data_set.olist_orders_dataset;
 
 -- =============================================================================
 -- BUSINESS QUESTIONS (Medium Difficulty)
@@ -129,7 +129,7 @@ FROM olist_sales_data_set.orders;
 SELECT 
     customer_city,
     COUNT(*) AS customer_count
-FROM olist_sales_data_set.customers
+FROM olist_sales_data_set.olist_customers_dataset
 WHERE customer_state = 'SP'
 GROUP BY customer_city
 ORDER BY COUNT(*) DESC
@@ -141,13 +141,13 @@ SELECT
     order_id,
     payment_type,
     payment_value
-FROM olist_sales_data_set.payments
+FROM olist_sales_data_set.olist_order_payments_dataset
 WHERE payment_value > 1000
 ORDER BY payment_value DESC;
 
 -- Exercise 17: Product Category Exploration
 SELECT COUNT(DISTINCT product_category_name) AS "Unique Categories"
-FROM olist_sales_data_set.products
+FROM olist_sales_data_set.olist_products_dataset
 WHERE product_category_name IS NOT NULL;
 -- Expected Result: ~73 categories
 
@@ -173,7 +173,7 @@ SELECT
         WHEN 12 THEN 'December'
     END AS month_name,
     COUNT(*) AS order_count
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 WHERE EXTRACT(YEAR FROM order_purchase_timestamp) = 2018
 GROUP BY EXTRACT(MONTH FROM order_purchase_timestamp)
 ORDER BY EXTRACT(MONTH FROM order_purchase_timestamp);
@@ -191,7 +191,7 @@ SELECT
         WHEN 6 THEN 'Saturday'
     END AS day_name,
     COUNT(*) AS order_count
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 GROUP BY EXTRACT(DOW FROM order_purchase_timestamp)
 ORDER BY COUNT(*) DESC;
 
@@ -205,10 +205,10 @@ SELECT
     COUNT(*) AS "Number of Reviews",
     ROUND(COUNT(*) * 100.0 / (
         SELECT COUNT(*) 
-        FROM olist_sales_data_set.reviews 
+        FROM olist_sales_data_set.olist_order_reviews_dataset 
         WHERE review_score IS NOT NULL
     ), 2) AS "Percentage"
-FROM olist_sales_data_set.reviews
+FROM olist_sales_data_set.olist_order_reviews_dataset
 WHERE review_score IS NOT NULL
 GROUP BY review_score
 ORDER BY review_score;
@@ -219,7 +219,7 @@ SELECT
     COUNT(*) AS transaction_count,
     ROUND(SUM(payment_value), 2) AS total_revenue,
     ROUND(AVG(payment_value), 2) AS avg_transaction_value
-FROM olist_sales_data_set.payments
+FROM olist_sales_data_set.olist_order_payments_dataset
 GROUP BY payment_type
 ORDER BY SUM(payment_value) DESC;
 
@@ -229,9 +229,9 @@ SELECT
     COUNT(DISTINCT o.order_id) AS total_orders,
     ROUND(SUM(p.payment_value), 2) AS total_revenue,
     ROUND(AVG(p.payment_value), 2) AS avg_order_value
-FROM olist_sales_data_set.orders o
-JOIN olist_sales_data_set.customers c ON o.customer_id = c.customer_id
-LEFT JOIN olist_sales_data_set.payments p ON o.order_id = p.order_id
+FROM olist_sales_data_set.olist_orders_dataset o
+JOIN olist_sales_data_set.olist_customers_dataset c ON o.customer_id = c.customer_id
+LEFT JOIN olist_sales_data_set.olist_order_payments_dataset p ON o.order_id = p.order_id
 WHERE o.order_status = 'delivered'
 GROUP BY c.customer_state
 ORDER BY SUM(p.payment_value) DESC
@@ -242,17 +242,17 @@ LIMIT 10;
 -- =============================================================================
 
 -- Quick Check 1: Count total customers
-SELECT COUNT(*) AS total_customers FROM olist_sales_data_set.customers;
+SELECT COUNT(*) AS total_customers FROM olist_sales_data_set.olist_customers_dataset;
 
 -- Quick Check 2: Show 5 newest orders
-SELECT * FROM olist_sales_data_set.orders 
+SELECT * FROM olist_sales_data_set.olist_orders_dataset 
 ORDER BY order_purchase_timestamp DESC LIMIT 5;
 
 -- Quick Check 3: List all unique order statuses
-SELECT DISTINCT order_status FROM olist_sales_data_set.orders ORDER BY order_status;
+SELECT DISTINCT order_status FROM olist_sales_data_set.olist_orders_dataset ORDER BY order_status;
 
 -- Quick Check 4: Find the most expensive single payment
-SELECT * FROM olist_sales_data_set.payments 
+SELECT * FROM olist_sales_data_set.olist_order_payments_dataset 
 ORDER BY payment_value DESC LIMIT 1;
 
 -- =============================================================================
@@ -264,7 +264,7 @@ SELECT
     product_id,
     product_category_name,
     product_weight_g
-FROM olist_sales_data_set.products
+FROM olist_sales_data_set.olist_products_dataset
 WHERE product_weight_g IS NOT NULL
 ORDER BY product_weight_g DESC
 LIMIT 5;
@@ -274,7 +274,7 @@ SELECT
     product_id,
     product_category_name,
     product_name_length
-FROM olist_sales_data_set.products
+FROM olist_sales_data_set.olist_products_dataset
 WHERE product_name_length IS NOT NULL
 ORDER BY product_name_length DESC
 LIMIT 10;
@@ -283,7 +283,7 @@ LIMIT 10;
 SELECT 
     EXTRACT(HOUR FROM order_purchase_timestamp) AS hour_of_day,
     COUNT(*) AS orders_placed
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 GROUP BY EXTRACT(HOUR FROM order_purchase_timestamp)
 ORDER BY COUNT(*) DESC;
 
@@ -292,7 +292,7 @@ SELECT
     payment_installments,
     COUNT(*) AS payment_count,
     ROUND(AVG(payment_value), 2) AS avg_payment_value
-FROM olist_sales_data_set.payments
+FROM olist_sales_data_set.olist_order_payments_dataset
 WHERE payment_installments <= 10  -- Focus on common installment counts
 GROUP BY payment_installments
 ORDER BY payment_installments;

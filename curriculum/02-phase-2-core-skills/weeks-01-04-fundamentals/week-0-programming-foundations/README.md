@@ -96,10 +96,10 @@ print("Total sales:", sales_total)
 SELECT 'Hello, Data Analyst!' as greeting;
 
 -- This is like asking "what's in this spreadsheet?"
-SELECT * FROM olist_sales_data_set.orders LIMIT 5;
+SELECT * FROM olist_sales_data_set.olist_orders_dataset LIMIT 5;
 
 -- This is like counting rows in Excel
-SELECT COUNT(*) as total_orders FROM olist_sales_data_set.orders;
+SELECT COUNT(*) as total_orders FROM olist_sales_data_set.olist_orders_dataset;
 ```
 
 #### Part 2: Understanding the Development Environment (30 minutes)
@@ -183,10 +183,10 @@ print("Your favorite number times 2 is", favorite_number * 2)
 ### Exercise 2: Your First SQL Query
 ```sql
 -- Look at the data structure (like opening a new Excel file)
-SELECT * FROM olist_sales_data_set.orders LIMIT 3;
+SELECT * FROM olist_sales_data_set.olist_orders_dataset LIMIT 3;
 
 -- Count something (like using COUNTA in Excel)
-SELECT COUNT(*) as "Total Orders" FROM olist_sales_data_set.orders;
+SELECT COUNT(*) as "Total Orders" FROM olist_sales_data_set.olist_orders_dataset;
 ```
 
 ### Exercise 3: Error Recovery Practice

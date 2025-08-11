@@ -14,7 +14,7 @@ This guide helps you translate concepts from yesterday's successful Python sessi
 ### Loading Data
 | Task | Python (Yesterday) | SQL (Today) |
 |------|-------------------|-------------|
-| **Load CSV file** | `df = pd.read_csv('orders.csv')` | `SELECT * FROM olist_sales_data_set.orders` |
+| **Load CSV file** | `df = pd.read_csv('orders.csv')` | `SELECT * FROM olist_sales_data_set.olist_orders_dataset` |
 | **First few rows** | `df.head()` or `df.head(10)` | `SELECT * FROM table LIMIT 5` or `LIMIT 10` |
 | **Last few rows** | `df.tail()` | `SELECT * FROM table ORDER BY column DESC LIMIT 5` |
 | **Random sample** | `df.sample(10)` | `SELECT * FROM table ORDER BY RANDOM() LIMIT 10` |

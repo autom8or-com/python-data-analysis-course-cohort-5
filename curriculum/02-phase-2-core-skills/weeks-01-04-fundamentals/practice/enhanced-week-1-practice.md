@@ -163,7 +163,7 @@ SELECT
     order_status,                -- VARCHAR (text) 
     order_purchase_timestamp,    -- TIMESTAMP (date and time)
     EXTRACT(YEAR FROM order_purchase_timestamp) as order_year  -- INTEGER (number)
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 LIMIT 10;
 ```
 
@@ -216,7 +216,7 @@ WITH ceo_metrics AS (
         COUNT(DISTINCT customer_id) as unique_customers,
         MIN(order_purchase_timestamp) as date_range_start,
         MAX(order_purchase_timestamp) as date_range_end
-    FROM olist_sales_data_set.orders
+    FROM olist_sales_data_set.olist_orders_dataset
 )
 SELECT 
     total_orders,
@@ -276,7 +276,7 @@ WITH categorized_orders AS (
             WHEN price >= 50 THEN 'Medium Value'
             ELSE 'Low Value'
         END as price_category
-    FROM olist_sales_data_set.order_items
+    FROM olist_sales_data_set.olist_order_items_dataset
 )
 SELECT 
     price_category,

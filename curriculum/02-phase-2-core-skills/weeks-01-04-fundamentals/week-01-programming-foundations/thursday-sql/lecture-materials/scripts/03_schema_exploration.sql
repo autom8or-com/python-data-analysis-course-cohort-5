@@ -120,7 +120,7 @@ SELECT
     customer_id,        -- VARCHAR: Links to customers table
     order_status,       -- VARCHAR: Text status ("delivered", "shipped", etc.)
     order_purchase_timestamp  -- TIMESTAMP: Date and time of purchase
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 LIMIT 5;
 
 -- Payments table: See numeric data types in action
@@ -152,7 +152,7 @@ SELECT
     COUNT(order_status) AS "Non-null Status", 
     COUNT(order_purchase_timestamp) AS "Non-null Purchase Dates",
     COUNT(order_delivered_customer_date) AS "Non-null Delivery Dates"
-FROM olist_sales_data_set.orders;
+FROM olist_sales_data_set.olist_orders_dataset;
 
 -- Calculate missing data percentages
 SELECT 
@@ -163,7 +163,7 @@ SELECT
     ROUND(
         (COUNT(*) - COUNT(order_delivered_customer_date)) * 100.0 / COUNT(*), 2
     ) AS "Missing Percentage"
-FROM olist_sales_data_set.orders;
+FROM olist_sales_data_set.olist_orders_dataset;
 
 -- 💡 Python Parallel:
 -- df.isnull().sum()
@@ -185,8 +185,8 @@ SELECT
     o.order_status AS "Order Status", 
     c.customer_state AS "Customer State",
     c.customer_city AS "Customer City"
-FROM olist_sales_data_set.orders o
-JOIN olist_sales_data_set.customers c ON o.customer_id = c.customer_id
+FROM olist_sales_data_set.olist_orders_dataset o
+JOIN olist_sales_data_set.olist_customers_dataset c ON o.customer_id = c.customer_id
 LIMIT 5;
 
 -- 💡 Business Value: This connection lets us answer questions like:
@@ -205,7 +205,7 @@ LIMIT 5;
 SELECT 
     'orders' AS "Table Name",
     COUNT(*) AS "Number of Rows"
-FROM olist_sales_data_set.orders
+FROM olist_sales_data_set.olist_orders_dataset
 
 UNION ALL
 
@@ -255,8 +255,8 @@ ORDER BY "Number of Columns" DESC;
 SELECT 
     order_status AS "Order Status",
     COUNT(*) AS "Number of Orders",
-    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM olist_sales_data_set.orders), 2) AS "Percentage"
-FROM olist_sales_data_set.orders
+    ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM olist_sales_data_set.olist_orders_dataset), 2) AS "Percentage"
+FROM olist_sales_data_set.olist_orders_dataset
 GROUP BY order_status
 ORDER BY COUNT(*) DESC;
 

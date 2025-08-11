@@ -120,8 +120,8 @@ SELECT
     p.product_category_name AS "Product Category",
     COUNT(oi.product_id) AS "Items Sold",
     ROUND(AVG(oi.price), 2) AS "Average Item Price"
-FROM olist_sales_data_set.order_items oi
-JOIN olist_sales_data_set.products p ON oi.product_id = p.product_id
+FROM olist_sales_data_set.olist_order_items_dataset oi
+JOIN olist_sales_data_set.olist_products_dataset p ON oi.product_id = p.product_id
 WHERE p.product_category_name IS NOT NULL
 GROUP BY p.product_category_name
 ORDER BY COUNT(oi.product_id) DESC
@@ -133,8 +133,8 @@ SELECT
     COUNT(oi.product_id) AS "Items Sold",
     ROUND(SUM(oi.price), 2) AS "Total Revenue",
     ROUND(AVG(oi.price), 2) AS "Average Price"
-FROM olist_sales_data_set.order_items oi
-JOIN olist_sales_data_set.products p ON oi.product_id = p.product_id
+FROM olist_sales_data_set.olist_order_items_dataset oi
+JOIN olist_sales_data_set.olist_products_dataset p ON oi.product_id = p.product_id
 WHERE p.product_category_name IS NOT NULL
 GROUP BY p.product_category_name
 ORDER BY SUM(oi.price) DESC
@@ -202,7 +202,7 @@ SELECT
     COUNT(r.review_score) AS "Number of Reviews",
     ROUND(AVG(r.review_score), 2) AS "Average Rating"
 FROM olist_sales_data_set.olist_orders_dataset o
-LEFT JOIN olist_sales_data_set.reviews r ON o.order_id = r.order_id
+LEFT JOIN olist_sales_data_set.olist_order_reviews_dataset r ON o.order_id = r.order_id
 WHERE r.review_score IS NOT NULL
 GROUP BY o.order_status
 ORDER BY AVG(r.review_score) DESC;
@@ -221,8 +221,8 @@ SELECT
     COUNT(o.order_id) AS "Total Orders",
     ROUND(SUM(p.payment_value), 2) AS "Total Spent"
 FROM olist_sales_data_set.olist_orders_dataset o
-JOIN olist_sales_data_set.customers c ON o.customer_id = c.customer_id
-LEFT JOIN olist_sales_data_set.payments p ON o.order_id = p.order_id
+JOIN olist_sales_data_set.olist_customers_dataset c ON o.customer_id = c.customer_id
+LEFT JOIN olist_sales_data_set.olist_order_payments_dataset p ON o.order_id = p.order_id
 GROUP BY o.customer_id, c.customer_state, c.customer_city
 ORDER BY SUM(p.payment_value) DESC
 LIMIT 10;
@@ -234,7 +234,7 @@ SELECT
     COUNT(DISTINCT o.order_id) AS "Orders",
     ROUND(SUM(p.payment_value), 2) AS "Revenue"
 FROM olist_sales_data_set.olist_orders_dataset o
-LEFT JOIN olist_sales_data_set.payments p ON o.order_id = p.order_id
+LEFT JOIN olist_sales_data_set.olist_order_payments_dataset p ON o.order_id = p.order_id
 WHERE o.order_status = 'delivered'
 GROUP BY EXTRACT(YEAR FROM o.order_purchase_timestamp),
          EXTRACT(MONTH FROM o.order_purchase_timestamp)

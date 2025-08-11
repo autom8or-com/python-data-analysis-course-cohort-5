@@ -220,7 +220,7 @@ SELECT
     c.customer_city AS "Customer City",
     c.customer_state AS "Customer State"
 FROM olist_sales_data_set.olist_orders_dataset o
-JOIN olist_sales_data_set.customers c ON o.customer_id = c.customer_id
+JOIN olist_sales_data_set.olist_customers_dataset c ON o.customer_id = c.customer_id
 WHERE o.order_status = 'delivered'
 ORDER BY o.order_purchase_timestamp DESC
 LIMIT 10;
