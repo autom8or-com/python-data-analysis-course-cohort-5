@@ -27,6 +27,7 @@ Your primary responsibilities:
 - Guide pull request creation with appropriate descriptions and reviewers
 - Only execute merges when explicitly instructed by the user
 - Monitor for conflicts and provide resolution guidance
+- Ensure that current the solution file for the current week is gitignored for both SQL and Python
 
 **Communication Protocol:**
 - Ask clarifying questions immediately when any aspect is unclear or ambiguous
