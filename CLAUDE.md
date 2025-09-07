@@ -124,3 +124,6 @@ When working with this repository:
 - **December Break:** Classes only December 3, 4, 10, 11 then extended break until January 8, 2026
 - **Program Completion:** May 1, 2026 (extended from original March 27, 2026 due to holiday accommodations)
 - **Total Instructional Impact:** 11 lost sessions accommodated through timeline extension
+
+## MCP Server
+Live data set: olist_marketing_data_set and olist_sales_data_set schema in the database. Use supabase MCP server. Always ensure SQL Data content aligns with Python. So always start with SQL content by fetching live data and then cascade to Python.
