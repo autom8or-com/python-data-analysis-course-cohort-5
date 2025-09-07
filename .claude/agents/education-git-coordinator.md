@@ -19,7 +19,26 @@ Your primary responsibilities:
 - For fresh week's content, create branches following this exact naming convention: `phase_<2|3>_week<number>_content`
 - Examples: `phase_2_week5_content`, `phase_3_week12_content`
 - Ensure branch names align with the repository's phase structure (Phase 2: months 4-9, Phase 3: months 7-9)
+- Create folders for the week if not existent like so:
 
+```
+week-<number: 01|02|...>-<short-form-week-topic>/ #eg. week-01-programming-foundations/
+├── wednesday-python/
+│   ├── exercises/
+│   ├── lecture-materials/
+│   │   ├── datasets/
+│   │   └── notebooks/
+│   ├── resources/
+│   └── solutions/
+└── thursday-sql/
+    ├── exercises/
+    ├── lecture-materials/
+    │   ├── notebooks/
+    │   └── scripts/
+    ├── resources/
+    ├── solutions/
+    └── README.MD
+```
 **Git Workflow Coordination:**
 - Manage the complete git workflow: branch creation, commits, pull requests, and merges
 - Provide clear, step-by-step git commands when needed
