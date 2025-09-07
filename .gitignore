@@ -175,3 +175,5 @@ tmp/
 roles_script.sql
 curriculum/02-phase-2-core-skills/weeks-01-04-fundamentals/week-01-programming-foundations/thursday-sql/solutions/week_01_sql_solutions.sql
 curriculum/02-phase-2-core-skills/weeks-01-04-fundamentals/week-01-programming-foundations/wednesday-python/solutions/week_01_python_solutions.ipynb
+curriculum/02-phase-2-core-skills/weeks-01-04-fundamentals/week-03-sorting-calculated-fields/wednesday-python/solutions/python_week3_solutions.ipynb
+curriculum/02-phase-2-core-skills/weeks-01-04-fundamentals/week-03-sorting-calculated-fields/thursday-sql/solutions/sql_week3_solutions.sql
