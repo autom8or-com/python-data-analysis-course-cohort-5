@@ -1,0 +1,51 @@
+order_id,customer_id,customer_city,customer_state,order_date,delivery_date,order_status,total_amount,payment_method,product_category,seasonal_event
+NC001,CUST001,Lagos,Lagos,2023-12-15 14:30:00,2023-12-20 16:45:00,delivered,25600.50,bank_transfer,electronics,Christmas Shopping
+NC002,CUST002,Abuja,FCT,2023-12-20 10:15:30,2023-12-24 12:30:00,delivered,15800.75,card,fashion,Christmas Rush
+NC003,CUST003,Kano,Kano,2023-12-22 16:45:00,2023-12-28 14:20:00,delivered,8950.25,ussd,home_garden,Christmas Week
+NC004,CUST004,Port Harcourt,Rivers,2024-01-02 09:30:15,2024-01-08 11:45:30,delivered,12300.00,bank_transfer,electronics,New Year
+NC005,CUST005,Ibadan,Oyo,2024-01-15 13:20:45,2024-01-20 15:30:00,delivered,6750.80,card,fashion,January Sales
+NC006,CUST006,Kaduna,Kaduna,2024-02-14 11:45:30,2024-02-18 09:15:45,delivered,18500.25,ussd,gifts,Valentine's Day
+NC007,CUST007,Benin City,Edo,2024-03-08 08:15:20,2024-03-12 14:30:15,delivered,9200.60,card,beauty,Women's Day
+NC008,CUST008,Jos,Plateau,2024-04-10 16:30:45,2024-04-15 12:20:30,delivered,14750.90,bank_transfer,electronics,Easter Shopping
+NC009,CUST009,Ilorin,Kwara,2024-04-18 12:45:15,2024-04-22 16:10:00,delivered,7300.45,ussd,fashion,Easter Week
+NC010,CUST010,Calabar,Cross River,2024-05-01 10:20:30,2024-05-06 13:45:15,delivered,11800.75,card,home_garden,Workers Day
+NC011,CUST011,Akure,Ondo,2024-05-12 14:15:45,2024-05-17 11:30:20,delivered,8650.30,bank_transfer,beauty,Mother's Day
+NC012,CUST012,Abeokuta,Ogun,2024-06-01 09:45:30,2024-06-05 15:20:45,delivered,16200.85,card,electronics,Children's Day
+NC013,CUST013,Enugu,Enugu,2024-06-12 15:30:15,2024-06-17 10:45:30,delivered,13450.70,ussd,fashion,Democracy Day Prep
+NC014,CUST014,Warri,Delta,2024-07-15 11:20:45,2024-07-20 14:35:20,delivered,9875.40,bank_transfer,sports,Summer Sales
+NC015,CUST015,Sokoto,Sokoto,2024-08-15 13:45:30,2024-08-20 09:15:45,delivered,12600.65,card,electronics,Back to School
+NC016,CUST016,Maiduguri,Borno,2024-08-28 10:30:15,2024-09-02 16:45:30,delivered,8950.85,ussd,books_supplies,School Prep
+NC017,CUST017,Uyo,Akwa Ibom,2024-09-10 16:15:45,2024-09-15 12:30:20,delivered,15750.30,bank_transfer,fashion,September Rush
+NC018,CUST018,Owerri,Imo,2024-10-01 08:45:30,2024-10-05 14:20:15,delivered,18900.45,card,electronics,Independence Day
+NC019,CUST019,Awka,Anambra,2024-10-15 12:30:45,2024-10-20 11:15:30,delivered,7650.75,ussd,fashion,October Sales
+NC020,CUST020,Yola,Adamawa,2024-11-15 14:45:15,2024-11-20 16:30:45,delivered,13200.90,bank_transfer,electronics,November Deals
+NC021,CUST021,Bauchi,Bauchi,2024-11-28 09:15:30,2024-12-03 13:45:15,delivered,11450.60,card,gifts,Black Friday
+NC022,CUST022,Gombe,Gombe,2024-12-05 15:30:45,2024-12-10 10:20:30,delivered,19800.85,ussd,electronics,Christmas Prep
+NC023,CUST023,Lafia,Nasarawa,2024-12-12 11:45:15,2024-12-17 14:35:45,delivered,8750.25,bank_transfer,fashion,Christmas Shopping
+NC024,CUST024,Lokoja,Kogi,2024-12-18 13:20:30,2024-12-23 15:45:20,delivered,16500.40,card,gifts,Christmas Week
+NC025,CUST025,Makurdi,Benue,2024-12-24 16:45:45,2024-12-28 12:30:15,delivered,22100.75,ussd,food_beverages,Christmas Day
+NC026,CUST026,Asaba,Delta,2023-07-20 10:30:15,2023-07-25 14:45:30,delivered,14750.60,bank_transfer,electronics,Summer Tech
+NC027,CUST027,Abakaliki,Ebonyi,2023-08-10 13:15:45,2023-08-15 16:20:30,delivered,9650.85,card,fashion,August Fashion
+NC028,CUST028,Dutse,Jigawa,2023-09-05 11:45:30,2023-09-10 12:30:15,delivered,12300.45,ussd,home_garden,September Home
+NC029,CUST029,Birnin Kebbi,Kebbi,2023-10-12 15:20:45,2023-10-17 09:45:30,delivered,8950.70,bank_transfer,books,October Learning
+NC030,CUST030,Minna,Niger,2023-11-08 09:30:15,2023-11-13 13:15:45,delivered,16800.25,card,electronics,November Tech
+NC031,CUST031,Abeokuta,Ogun,2023-12-01 14:45:30,2023-12-06 11:30:20,delivered,11250.90,ussd,gifts,December Gifts
+NC032,CUST032,Osogbo,Osun,2024-01-08 12:15:45,2024-01-13 15:45:30,delivered,9875.40,bank_transfer,fashion,New Year Style
+NC033,CUST033,Ikeja,Lagos,2024-02-20 16:30:15,2024-02-25 10:45:20,delivered,18650.75,card,electronics,February Tech
+NC034,CUST034,Sapele,Delta,2024-03-15 08:45:30,2024-03-20 14:20:45,delivered,7450.85,ussd,beauty,March Beauty
+NC035,CUST035,Aba,Abia,2024-04-25 11:30:45,2024-04-30 13:15:30,delivered,13750.60,bank_transfer,fashion,April Fashion
+NC036,CUST036,Okene,Kogi,2024-05-18 13:45:15,2024-05-23 16:30:45,delivered,10950.25,card,home_garden,May Garden
+NC037,CUST037,Suleja,Niger,2024-06-22 10:20:30,2024-06-27 12:45:15,delivered,15650.90,ussd,electronics,June Electronics
+NC038,CUST038,Gusau,Zamfara,2024-07-28 14:15:45,2024-08-02 11:30:20,delivered,8750.45,bank_transfer,sports,July Sports
+NC039,CUST039,Jalingo,Taraba,2024-08-18 09:45:30,2024-08-23 15:20:45,delivered,12450.75,card,books_supplies,August School
+NC040,CUST040,Damaturu,Yobe,2024-09-25 15:30:15,2024-09-30 13:45:30,delivered,9650.30,ussd,fashion,September Style
+NC041,CUST041,Victoria Island,Lagos,2024-10-08 12:45:30,2024-10-13 16:20:15,delivered,24500.85,bank_transfer,luxury,October Luxury
+NC042,CUST042,Garki,FCT,2024-11-12 08:30:45,2024-11-17 14:15:30,delivered,17850.60,card,electronics,November Deals
+NC043,CUST043,GRA,Rivers,2024-12-08 16:15:20,2024-12-13 11:45:45,delivered,13950.25,ussd,gifts,Christmas Gifts
+NC044,CUST044,Bodija,Oyo,2023-06-15 11:30:45,2023-06-20 14:45:30,delivered,8650.70,bank_transfer,home_garden,June Home
+NC045,CUST045,Wuse,FCT,2023-07-08 13:45:15,2023-07-13 10:20:30,delivered,19750.85,card,electronics,July Tech
+NC046,CUST046,New GRA,Kano,2023-08-22 15:20:30,2023-08-27 12:45:15,delivered,11450.40,ussd,fashion,August Fashion
+NC047,CUST047,Trans Amadi,Rivers,2023-09-18 09:15:45,2023-09-23 16:30:20,delivered,14650.75,bank_transfer,electronics,September Tech
+NC048,CUST048,Ring Road,Ibadan,2023-10-25 12:30:15,2023-10-30 09:45:30,delivered,7950.60,card,beauty,October Beauty
+NC049,CUST049,Sabon Gari,Kaduna,2023-11-22 14:45:30,2023-11-27 11:20:45,delivered,16750.25,ussd,gifts,November Prep
+NC050,CUST050,Independence Layout,Enugu,2023-12-18 10:15:45,2023-12-23 13:30:20,delivered,21850.90,bank_transfer,luxury,Christmas Luxury
