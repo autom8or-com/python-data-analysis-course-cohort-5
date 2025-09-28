@@ -1,0 +1,51 @@
+customer_id,customer_city,customer_state,customer_zip_code_prefix
+CUST0001,rio de janeiro,RJ,20785
+CUST0002,taboao da serra,SP,6785
+CUST0003,promissao,SP,16370
+CUST0004,sao paulo,SP,3167
+CUST0005,sao paulo,SP,2859
+CUST0006,sao borja,RS,97670
+CUST0007,santos,SP,11025
+CUST0008,sao paulo,SP,8011
+CUST0009,trindade,GO,75388
+CUST0010,florianopolis,SC,88010
+CUST0011,agua branca,PB,58748
+CUST0012,sao paulo,SP,5812
+CUST0013,sao caetano do sul,SP,9571
+CUST0014,curitiba,PR,82220
+CUST0015,carangola,MG,36800
+CUST0016,sao paulo,SP,4570
+CUST0017,sao paulo,SP,4080
+CUST0018,porto alegre,RS,90840
+CUST0019,pelotas,RS,96065
+CUST0020,alagoinhas,BA,48005
+CUST0021,umuarama,PR,87508
+CUST0022,itauna,MG,35680
+CUST0023,caxias do sul,RS,95110
+CUST0024,valinhos,SP,13279
+CUST0025,belem,PA,66615
+CUST0026,belo horizonte,MG,31255
+CUST0027,rio de janeiro,RJ,20771
+CUST0028,sao paulo,SP,1403
+CUST0029,palhoca,SC,88132
+CUST0030,taubate,SP,12040
+CUST0031,sao paulo,SP,4116
+CUST0032,sao paulo,SP,3088
+CUST0033,goiania,GO,74367
+CUST0034,quedas do iguacu,PR,85460
+CUST0035,rio largo,AL,57100
+CUST0036,sao joao evangelista,MG,39705
+CUST0037,sao paulo,SP,5661
+CUST0038,sao paulo,SP,3372
+CUST0039,sao paulo,SP,4302
+CUST0040,novo horizonte,SC,89998
+CUST0041,erechim,RS,99700
+CUST0042,rio de janeiro,RJ,21710
+CUST0043,rio de janeiro,RJ,21350
+CUST0044,rio de janeiro,RJ,21920
+CUST0045,palmas,TO,77006
+CUST0046,brasilia,DF,72015
+CUST0047,sao paulo,SP,5033
+CUST0048,belo horizonte,MG,31150
+CUST0049,ribeirao preto,SP,14093
+CUST0050,sao paulo,SP,4515
