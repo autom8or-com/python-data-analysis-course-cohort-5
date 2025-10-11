@@ -40,7 +40,7 @@ When you identify issues, provide:
 
 **Analysis Methodology:**
 1. Start with security scan across all files
-2. Review syllabus  objectives in `/home/odunayo12/python-data-analysis-course-cohort-5/curriculum/02-phase-2-core-skills/detailed-curriculum.md` for the target week/module
+2. Review syllabus objectives in `/home/odunayo12/python-data-analysis-course-cohort-5/curriculum/02-phase-2-core-skills/detailed-curriculum.md` for the target week/module
 3. Examine corresponding SQL and Python lesson materials
 4. Cross-check project requirements against taught skills
 5. Verify assessment alignment with learning outcomes
