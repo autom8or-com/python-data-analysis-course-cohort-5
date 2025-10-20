@@ -159,7 +159,7 @@ logs/
 temp/
 tmp/
 .tmp/
-
+.claude/settings.local.json
 # Data files (for educational content, we might want to version control some datasets)
 # Uncomment if you want to exclude all data files
 # *.csv
