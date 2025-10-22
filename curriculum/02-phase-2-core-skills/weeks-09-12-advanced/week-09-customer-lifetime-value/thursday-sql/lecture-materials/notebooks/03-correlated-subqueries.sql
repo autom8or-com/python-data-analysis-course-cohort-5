@@ -292,8 +292,8 @@ SELECT
 
     -- Days between first two orders
     (
-        SELECT EXTRACT(DAY FROM MIN(o2.order_purchase_timestamp) - (
-            SELECT MIN(o3.order_purchase_timestamp)
+        SELECT (MIN(o2.order_purchase_timestamp)::date - (
+            SELECT MIN(o3.order_purchase_timestamp)::date
             FROM olist_sales_data_set.olist_orders_dataset o3
             WHERE o3.customer_id = c.customer_id
               AND o3.order_status = 'delivered'
@@ -311,8 +311,8 @@ SELECT
 
     -- Days between last two orders
     (
-        SELECT EXTRACT(DAY FROM MAX(o2.order_purchase_timestamp) - (
-            SELECT MAX(o3.order_purchase_timestamp)
+        SELECT (MAX(o2.order_purchase_timestamp)::date - (
+            SELECT MAX(o3.order_purchase_timestamp)::date
             FROM olist_sales_data_set.olist_orders_dataset o3
             WHERE o3.customer_id = c.customer_id
               AND o3.order_status = 'delivered'

@@ -55,7 +55,7 @@ customer_rfm_raw AS (
         c.customer_city,
 
         -- Recency: Days since last purchase
-        EXTRACT(DAY FROM '2018-09-01'::date - MAX(o.order_purchase_timestamp)::date) as days_since_last_purchase,
+        ('2018-09-01'::date - MAX(o.order_purchase_timestamp)::date) as days_since_last_purchase,
 
         -- Frequency: Number of orders
         COUNT(DISTINCT o.order_id) as total_orders,
@@ -190,7 +190,7 @@ SELECT
     ROUND(AVG(rfm_total_score)::numeric, 1) as avg_rfm_score,
 
     -- Segment value as percentage of total
-    ROUND((SUM(lifetime_value) / SUM(SUM(lifetime_value)) OVER () * 100)::numeric, 2) as pct_of_total_value,
+    ROUND(SUM(lifetime_value)::numeric / (SUM(SUM(lifetime_value)) OVER ())::numeric * 100, 2) as pct_of_total_value,
 
     -- Recommended action
     CASE
@@ -260,12 +260,12 @@ cohort_metrics AS (
         , 2) as repeat_purchase_rate,
 
         -- Customer lifespan
-        ROUND(AVG(EXTRACT(DAY FROM last_purchase_date - cohort_date))::numeric, 0) as avg_customer_lifespan_days,
+        ROUND(AVG((last_purchase_date - cohort_date))::numeric, 0) as avg_customer_lifespan_days,
 
         -- Revenue per day
         ROUND(
             (SUM(lifetime_value) / COUNT(DISTINCT customer_unique_id)) /
-            NULLIF(AVG(EXTRACT(DAY FROM last_purchase_date - cohort_date)), 0)
+            NULLIF(AVG((last_purchase_date - cohort_date)), 0)
         ::numeric, 2) as revenue_per_customer_per_day
 
     FROM customer_cohorts
@@ -351,15 +351,15 @@ customer_history AS (
         SUM(oi.price + oi.freight_value) as historical_value,
         MIN(o.order_purchase_timestamp)::date as first_purchase,
         MAX(o.order_purchase_timestamp)::date as last_purchase,
-        EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp)) as days_active,
+        (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date) as days_active,
 
         -- Calculate purchase velocity (orders per month)
         CASE
-            WHEN EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp)) = 0
+            WHEN (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date) = 0
                 THEN COUNT(DISTINCT o.order_id)
             ELSE
                 COUNT(DISTINCT o.order_id) * 30.0 /
-                EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp))
+                (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date)
         END as orders_per_month
 
     FROM olist_sales_data_set.olist_customers_dataset c
@@ -378,19 +378,19 @@ customer_trends AS (
         customer_state,
         historical_orders,
         ROUND(historical_value::numeric, 2) as historical_value,
-        ROUND((historical_value / historical_orders)::numeric, 2) as avg_order_value,
+        ROUND(historical_value::numeric / historical_orders, 2) as avg_order_value,
         first_purchase,
         last_purchase,
         days_active,
         ROUND(orders_per_month::numeric, 2) as orders_per_month,
 
         -- Days since last purchase
-        EXTRACT(DAY FROM '2018-09-01'::date - last_purchase) as days_since_last_purchase,
+        ('2018-09-01'::date - last_purchase) as days_since_last_purchase,
 
         -- Engagement status
         CASE
-            WHEN EXTRACT(DAY FROM '2018-09-01'::date - last_purchase) <= 60 THEN 'Active'
-            WHEN EXTRACT(DAY FROM '2018-09-01'::date - last_purchase) <= 180 THEN 'At Risk'
+            WHEN ('2018-09-01'::date - last_purchase) <= 60 THEN 'Active'
+            WHEN ('2018-09-01'::date - last_purchase) <= 180 THEN 'At Risk'
             ELSE 'Inactive'
         END as engagement_status
 
@@ -510,7 +510,7 @@ base_rfm AS (
     SELECT
         c.customer_unique_id,
         c.customer_state,
-        EXTRACT(DAY FROM '2018-09-01'::date - MAX(o.order_purchase_timestamp)::date) as recency_days,
+        ('2018-09-01'::date - MAX(o.order_purchase_timestamp)::date) as recency_days,
         COUNT(DISTINCT o.order_id) as frequency,
         SUM(oi.price + oi.freight_value) as monetary_value
     FROM olist_sales_data_set.olist_customers_dataset c
