@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\Users\\HP\\OneDrive - Bluebulb Financials Ltd\\Documents\\Personal\\python-data-analysis-course-cohort-5\\curriculum\\02-phase-2-core-skills\\weeks-09-12-advanced\\week-09-customer-lifetime-value\\thursday-sql\" /s /b)",
+      "Bash(findstr /i \".sql$\")",
+      "Bash(powershell -Command \"\n$file = ''02-cte-mastery.sql'';\n$content = Get-Content $file -Raw;\n$content = $content -replace ''EXTRACT\\(DAY FROM MAX\\(o\\.order_purchase_timestamp\\) - MIN\\(o\\.order_purchase_timestamp\\)\\)'', ''(MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date)'';\n$content = $content -replace ''WHEN EXTRACT\\(DAY FROM MAX\\(o\\.order_purchase_timestamp\\) - MIN\\(o\\.order_purchase_timestamp\\)\\) = 0'', ''WHEN (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date) = 0'';\n$content = $content -replace ''EXTRACT\\(DAY FROM MAX\\(o\\.order_purchase_timestamp\\) - MIN\\(o\\.order_purchase_timestamp\\)\\)'', ''(MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date)'';\n$content = $content -replace ''EXTRACT\\(DAY FROM ''''2018-09-01''''::date - last_purchase\\)'', ''(''''2018-09-01''''::date - last_purchase)'';\n$content = $content -replace ''WHEN EXTRACT\\(DAY FROM ''''2018-09-01''''::date - last_purchase\\)'', ''WHEN (''''2018-09-01''''::date - last_purchase)'';\n$content = $content -replace ''EXTRACT\\(DAY FROM ''''2018-09-01''''::date - MAX\\(o\\.order_purchase_timestamp\\)::date\\)'', ''(''''2018-09-01''''::date - MAX(o.order_purchase_timestamp)::date)'';\nSet-Content -Path $file -Value $content;\nWrite-Host ''File 02-cte-mastery.sql updated successfully''\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh pr create:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "supabase"
+  ]
+}
