@@ -68,7 +68,7 @@ SELECT
     c.customer_city,
     SUM(oi.price + oi.freight_value) as lifetime_value,
     COUNT(DISTINCT o.order_id) as total_orders,
-    ROUND((SUM(oi.price + oi.freight_value) / COUNT(DISTINCT o.order_id))::numeric, 2) as avg_order_value
+    ROUND(SUM(oi.price + oi.freight_value)::numeric / COUNT(DISTINCT o.order_id), 2) as avg_order_value
 FROM olist_sales_data_set.olist_customers_dataset c
 JOIN olist_sales_data_set.olist_orders_dataset o
     ON c.customer_id = o.customer_id
@@ -258,7 +258,7 @@ SELECT
     ROUND(AVG(lifetime_value)::numeric, 2) as avg_cohort_ltv,
     ROUND(AVG(total_orders)::numeric, 1) as avg_orders_per_customer,
     ROUND(AVG(days_as_customer)::numeric, 0) as avg_customer_lifespan_days,
-    ROUND((AVG(lifetime_value) / NULLIF(AVG(days_as_customer), 0))::numeric, 2) as avg_daily_revenue_per_customer
+    ROUND(AVG(lifetime_value)::numeric / NULLIF(AVG(days_as_customer), 0), 2) as avg_daily_revenue_per_customer
 FROM (
     -- Derived table: Calculate cohort metrics
     SELECT
@@ -266,7 +266,7 @@ FROM (
         TO_CHAR(MIN(o.order_purchase_timestamp), 'YYYY-MM') as first_purchase_month,
         COUNT(DISTINCT o.order_id) as total_orders,
         SUM(oi.price + oi.freight_value) as lifetime_value,
-        EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp)) as days_as_customer
+        (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date) as days_as_customer
     FROM olist_sales_data_set.olist_customers_dataset c
     JOIN olist_sales_data_set.olist_orders_dataset o
         ON c.customer_id = o.customer_id
@@ -292,7 +292,7 @@ SELECT
     state_rank,
 
     -- Calculate percentage of total revenue
-    ROUND((total_revenue / SUM(total_revenue) OVER () * 100)::numeric, 2) as pct_of_total_revenue
+    ROUND(total_revenue::numeric / (SUM(total_revenue) OVER ())::numeric * 100, 2) as pct_of_total_revenue
 FROM (
     -- Derived table: Aggregate by state
     SELECT
@@ -485,7 +485,7 @@ SELECT
 
     -- SELECT subquery: Customer's percentile ranking
     (
-        SELECT ROUND((COUNT(*) * 100.0 / total_count)::numeric, 1)
+        SELECT ROUND(COUNT(*)::numeric * 100.0 / total_count, 1)
         FROM (
             SELECT c2.customer_unique_id
             FROM olist_sales_data_set.olist_customers_dataset c2
@@ -506,7 +506,7 @@ SELECT
     ) as percentile_rank,
 
     -- Predictive: Days since last order
-    EXTRACT(DAY FROM CURRENT_DATE - last_purchase_date) as days_since_last_order,
+    (CURRENT_DATE - last_purchase_date) as days_since_last_order,
 
     -- Segment classification
     CASE
@@ -527,7 +527,7 @@ FROM (
         SUM(oi.price + oi.freight_value) / COUNT(DISTINCT o.order_id) as avg_order_value,
         MIN(o.order_purchase_timestamp)::date as first_purchase_date,
         MAX(o.order_purchase_timestamp)::date as last_purchase_date,
-        EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp)) as days_as_customer
+        (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date) as days_as_customer
     FROM olist_sales_data_set.olist_customers_dataset c
     JOIN olist_sales_data_set.olist_orders_dataset o
         ON c.customer_id = o.customer_id

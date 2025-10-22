@@ -159,7 +159,7 @@ logs/
 temp/
 tmp/
 .tmp/
-
+.mcp.json
 # Data files (for educational content, we might want to version control some datasets)
 # Uncomment if you want to exclude all data files
 # *.csv
@@ -190,3 +190,5 @@ curriculum/02-phase-2-core-skills/weeks-05-08-intermediate/week-08-advanced-filt
 curriculum/02-phase-2-core-skills/weeks-05-08-intermediate/week-08-advanced-filtering-subqueries/thursday-sql/solutions/*.sql
 curriculum/02-phase-2-core-skills/weeks-09-12-advanced/week-09-customer-lifetime-value/wednesday-python/solutions/*.ipynb
 curriculum/02-phase-2-core-skills/weeks-09-12-advanced/week-09-customer-lifetime-value/thursday-sql/solutions/*.sql
+curriculum/02-phase-2-core-skills/weeks-09-12-advanced/week-10-inventory-management/wednesday-python/solutions/*.ipynb
+curriculum/02-phase-2-core-skills/weeks-09-12-advanced/week-10-inventory-management/thursday-sql/solutions/*.sql

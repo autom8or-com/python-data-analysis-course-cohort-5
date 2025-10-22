@@ -45,7 +45,7 @@ customer_rfm_base AS (
         c.customer_id,
 
         -- Recency: Days since last purchase (as of Sept 1, 2018)
-        EXTRACT(DAY FROM '2018-09-01'::date - MAX(o.order_purchase_timestamp)::date) as recency_days,
+        ('2018-09-01'::date - MAX(o.order_purchase_timestamp)::date) as recency_days,
 
         -- Frequency: Total number of orders
         COUNT(DISTINCT o.order_id) as frequency_orders,
@@ -56,7 +56,7 @@ customer_rfm_base AS (
         -- Derived metrics
         MIN(o.order_purchase_timestamp)::date as first_purchase_date,
         MAX(o.order_purchase_timestamp)::date as last_purchase_date,
-        EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp)) as customer_tenure_days,
+        (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date) as customer_tenure_days,
         AVG(oi.price + oi.freight_value) as avg_order_value
 
     FROM olist_sales_data_set.olist_customers_dataset c
@@ -158,7 +158,7 @@ SELECT
     COUNT(*) as customer_count,
     ROUND(AVG(monetary_value)::numeric, 2) as avg_lifetime_value,
     ROUND(SUM(monetary_value)::numeric, 2) as total_segment_value,
-    ROUND((SUM(monetary_value) / SUM(SUM(monetary_value)) OVER ()) * 100, 2) as pct_of_total_revenue,
+    ROUND(SUM(monetary_value)::numeric / (SUM(SUM(monetary_value)) OVER ())::numeric * 100, 2) as pct_of_total_revenue,
     ROUND(AVG(frequency_orders)::numeric, 1) as avg_orders,
     ROUND(AVG(recency_days)::numeric, 0) as avg_days_inactive,
     ROUND(AVG(rfm_score)::numeric, 1) as avg_rfm_score,
@@ -232,7 +232,7 @@ cohort_metrics AS (
                COUNT(DISTINCT customer_unique_id)), 2) as repeat_purchase_rate,
 
         -- Engagement
-        ROUND(AVG(EXTRACT(DAY FROM last_purchase_date - cohort_date))::numeric, 0) as avg_lifespan_days,
+        ROUND(AVG((last_purchase_date - cohort_date))::numeric, 0) as avg_lifespan_days,
         COUNT(DISTINCT CASE WHEN total_orders >= 3 THEN customer_unique_id END) as loyal_customers,
         ROUND((COUNT(DISTINCT CASE WHEN total_orders >= 3 THEN customer_unique_id END) * 100.0 /
                COUNT(DISTINCT customer_unique_id)), 2) as loyalty_rate
@@ -319,7 +319,7 @@ SELECT
     ROUND(median_ltv::numeric, 2) as median_ltv,
 
     -- Revenue contribution
-    ROUND((total_revenue / SUM(total_revenue) OVER ()) * 100, 2) as pct_of_national_revenue,
+    ROUND(total_revenue::numeric / (SUM(total_revenue) OVER ())::numeric * 100, 2) as pct_of_national_revenue,
 
     -- Ranking
     RANK() OVER (ORDER BY total_revenue DESC) as revenue_rank,
@@ -334,7 +334,7 @@ SELECT
     END as market_classification,
 
     -- Top customer concentration
-    ROUND((top10_customer_revenue / total_revenue * 100)::numeric, 2) as top10_revenue_concentration_pct
+    ROUND(top10_customer_revenue::numeric / total_revenue * 100, 2) as top10_revenue_concentration_pct
 
 FROM state_performance
 WHERE total_customers >= 50  -- Focus on significant markets
@@ -356,20 +356,20 @@ customer_purchase_velocity AS (
         SUM(oi.price + oi.freight_value) as historical_value,
         MIN(o.order_purchase_timestamp)::date as first_purchase,
         MAX(o.order_purchase_timestamp)::date as last_purchase,
-        EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp)) as days_active,
+        (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date) as days_active,
         AVG(oi.price + oi.freight_value) as avg_order_value,
 
         -- Purchase frequency (orders per 30 days)
         CASE
-            WHEN EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp)) = 0
+            WHEN (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date) = 0
                 THEN COUNT(DISTINCT o.order_id)
             ELSE
                 COUNT(DISTINCT o.order_id) * 30.0 /
-                EXTRACT(DAY FROM MAX(o.order_purchase_timestamp) - MIN(o.order_purchase_timestamp))
+                (MAX(o.order_purchase_timestamp)::date - MIN(o.order_purchase_timestamp)::date)
         END as orders_per_month,
 
         -- Current engagement
-        EXTRACT(DAY FROM '2018-09-01'::date - MAX(o.order_purchase_timestamp)::date) as days_since_last_order
+        ('2018-09-01'::date - MAX(o.order_purchase_timestamp)::date) as days_since_last_order
 
     FROM olist_sales_data_set.olist_customers_dataset c
     JOIN olist_sales_data_set.olist_orders_dataset o ON c.customer_id = o.customer_id
@@ -550,12 +550,12 @@ SELECT
     total_orders,
     total_revenue,
     avg_customer_ltv,
-    ROUND((total_revenue / total_customers)::numeric, 2) as revenue_per_customer,
-    ROUND((total_orders * 1.0 / total_customers)::numeric, 2) as orders_per_customer,
+    ROUND(total_revenue::numeric / total_customers, 2) as revenue_per_customer,
+    ROUND(total_orders::numeric * 1.0 / total_customers, 2) as orders_per_customer,
     repeat_customers,
-    ROUND((repeat_customers * 100.0 / total_customers)::numeric, 2) as repeat_customer_rate_pct,
+    ROUND(repeat_customers::numeric * 100.0 / total_customers, 2) as repeat_customer_rate_pct,
     revenue_from_repeat_customers,
-    ROUND((revenue_from_repeat_customers / total_revenue * 100)::numeric, 2) as pct_revenue_from_repeats
+    ROUND(revenue_from_repeat_customers::numeric / total_revenue * 100, 2) as pct_revenue_from_repeats
 FROM overall_metrics;
 
 -- ================================================================
