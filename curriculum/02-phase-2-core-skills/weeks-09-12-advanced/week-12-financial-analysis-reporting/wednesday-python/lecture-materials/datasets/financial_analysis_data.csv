@@ -1,0 +1,51 @@
+customer_id,customer_state,customer_city,payment_value,payment_type,order_purchase_timestamp,payment_installments,customer_segment
+customer_0001,SP,São Paulo,145.67,credit_card,2018-01-05 14:23:00,1,Silver
+customer_0002,RJ,Rio de Janeiro,89.45,boleto,2018-01-06 09:15:00,1,Standard
+customer_0003,MG,Belo Horizonte,267.89,credit_card,2018-01-07 16:45:00,3,Gold
+customer_0004,BA,Salvador,178.23,credit_card,2018-01-08 11:30:00,2,Silver
+customer_0005,RS,Porto Alegre,95.12,debit_card,2018-01-09 13:22:00,1,Standard
+customer_0006,SP,São Paulo,312.45,credit_card,2018-01-10 10:18:00,4,Platinum
+customer_0007,RJ,Rio de Janeiro,134.78,boleto,2018-01-11 15:47:00,1,Silver
+customer_0008,MG,Belo Horizonte,189.56,credit_card,2018-01-12 08:55:00,2,Silver
+customer_0009,SP,São Paulo,78.90,voucher,2018-01-13 12:30:00,1,Standard
+customer_0010,BA,Salvador,234.67,credit_card,2018-01-14 17:22:00,3,Gold
+customer_0011,RS,Porto Alegre,156.34,debit_card,2018-01-15 14:18:00,1,Silver
+customer_0012,SP,Campinas,198.45,credit_card,2018-01-16 09:45:00,2,Silver
+customer_0013,RJ,Niterói,87.23,boleto,2018-01-17 16:30:00,1,Standard
+customer_0014,MG,Uberlândia,278.90,credit_card,2018-01-18 11:15:00,4,Platinum
+customer_0015,BA,Feira de Santana,145.67,boleto,2018-01-19 13:45:00,1,Silver
+customer_0016,RS,Caxias do Sul,167.89,credit_card,2018-01-20 08:20:00,2,Silver
+customer_0017,SP,Santos,234.56,credit_card,2018-01-21 15:30:00,3,Gold
+customer_0018,RJ,Petrópolis,98.76,debit_card,2018-01-22 10:45:00,1,Standard
+customer_0019,MG,Contagem,187.65,credit_card,2018-01-23 14:22:00,2,Silver
+customer_0020,SP,São Paulo,456.78,credit_card,2018-01-24 16:55:00,6,Platinum
+customer_0021,BA,Vitória da Conquista,123.45,boleto,2018-01-25 09:18:00,1,Silver
+customer_0022,RS,Gravataí,145.67,credit_card,2018-01-26 12:40:00,1,Silver
+customer_0023,SP,Guarulhos,167.89,credit_card,2018-01-27 11:25:00,2,Silver
+customer_0024,RJ,Volta Redonda,89.34,boleto,2018-01-28 15:50:00,1,Standard
+customer_0025,MG,Itabira,234.56,credit_card,2018-01-29 08:15:00,3,Gold
+customer_0026,SP,São José dos Campos,198.76,credit_card,2018-01-30 14:30:00,2,Silver
+customer_0027,BA,Jequié,156.78,boleto,2018-01-31 10:20:00,1,Silver
+customer_0028,RS,Novo Hamburgo,134.56,credit_card,2018-02-01 16:45:00,1,Silver
+customer_0029,SP,Sorocaba,289.67,credit_card,2018-02-02 09:35:00,4,Platinum
+customer_0030,RJ,Duque de Caxias,95.45,debit_card,2018-02-03 13:20:00,1,Standard
+customer_0031,MG,Ribeirão das Neves,178.90,credit_card,2018-02-04 11:10:00,2,Silver
+customer_0032,BA,Alagoinhas,145.67,boleto,2018-02-05 15:40:00,1,Silver
+customer_0033,RS,Sapucaia do Sul,167.89,credit_card,2018-02-06 08:55:00,2,Silver
+customer_0034,SP,Praia Grande,234.56,credit_card,2018-02-07 12:25:00,3,Gold
+customer_0035,RJ,Nova Iguaçu,78.90,voucher,2018-02-08 14:50:00,1,Standard
+customer_0036,MG,Betim,189.67,credit_card,2018-02-09 10:30:00,2,Silver
+customer_0037,BA,Barreiras,145.89,boleto,2018-02-10 16:15:00,1,Silver
+customer_0038,RS,Bento Gonçalves,267.45,credit_card,2018-02-11 09:45:00,3,Gold
+customer_0039,SP,São Bernardo do Campo,156.78,credit_card,2018-02-12 13:30:00,1,Silver
+customer_0040,RJ,Macaé,198.90,credit_card,2018-02-13 11:20:00,2,Silver
+customer_0041,MG,Divinópolis,134.56,boleto,2018-02-14 15:05:00,1,Silver
+customer_0042,SP,Santo André,345.67,credit_card,2018-02-15 08:40:00,5,Platinum
+customer_0043,BA,Juazeiro,167.89,credit_card,2018-02-16 12:15:00,2,Silver
+customer_0044,RS,Canoas,234.56,credit_card,2018-02-17 14:50:00,3,Gold
+customer_0045,RJ,Campos dos Goytacazes,89.67,debit_card,2018-02-18 10:25:00,1,Standard
+customer_0046,MG,Santa Luzia,145.78,boleto,2018-02-19 16:30:00,1,Silver
+customer_0047,SP,Osasco,178.90,credit_card,2018-02-20 09:15:00,2,Silver
+customer_0048,BA,Lauro de Freitas,298.76,credit_card,2018-02-21 13:45:00,4,Platinum
+customer_0049,RS,Passo Fundo,156.89,credit_card,2018-02-22 11:35:00,1,Silver
+customer_0050,SP,São José do Rio Preto,234.56,credit_card,2018-02-23 15:20:00,3,Gold
