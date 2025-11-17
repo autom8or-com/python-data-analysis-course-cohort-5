@@ -14,7 +14,8 @@
       "Bash(mkdir:*)",
       "Bash(tree:*)",
       "mcp__supabase__search_docs",
-      "mcp__supabase__execute_sql"
+      "mcp__supabase__execute_sql",
+      "SlashCommand(/git-workflow:feature week-12-financial-analysis-reporting)"
     ],
     "deny": [],
     "ask": []
