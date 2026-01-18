@@ -196,3 +196,13 @@ curriculum/02-phase-2-core-skills/weeks-09-12-advanced/week-11-marketing-perform
 curriculum/02-phase-2-core-skills/weeks-09-12-advanced/week-11-marketing-performance-analysis/thursday-sql/solutions/*.sql
 curriculum/02-phase-2-core-skills/weeks-09-12-advanced/week-12-financial-analysis-reporting/wednesday-python/solutions/*.ipynb
 curriculum/02-phase-2-core-skills/weeks-09-12-advanced/week-12-financial-analysis-reporting/thursday-sql/solutions/*.sql
+
+# Week 13-16 Visualization Solutions
+curriculum/02-phase-2-core-skills/weeks-13-16-visualization/week-13-looker-fundamentals/wednesday-looker/solutions/*.md
+curriculum/02-phase-2-core-skills/weeks-13-16-visualization/week-13-looker-fundamentals/thursday-looker/solutions/*.md
+curriculum/02-phase-2-core-skills/weeks-13-16-visualization/week-14-interactive-dashboards/wednesday-looker/solutions/*.md
+curriculum/02-phase-2-core-skills/weeks-13-16-visualization/week-14-interactive-dashboards/thursday-looker/solutions/*.md
+curriculum/02-phase-2-core-skills/weeks-13-16-visualization/week-15-advanced-looker-analytics/wednesday-looker/solutions/*.md
+curriculum/02-phase-2-core-skills/weeks-13-16-visualization/week-15-advanced-looker-analytics/thursday-looker/solutions/*.md
+curriculum/02-phase-2-core-skills/weeks-13-16-visualization/week-16-production-dashboards/wednesday-looker/solutions/*.md
+curriculum/02-phase-2-core-skills/weeks-13-16-visualization/week-16-production-dashboards/thursday-looker/solutions/*.md
