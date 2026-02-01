@@ -64,10 +64,10 @@ Two dashboards with identical data:
 **Example:**
 ```
 ┌─────────────────────────────────────────────────┐
-│  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  │
-│  ┃  NGN 45.3M Revenue | 1,543 Orders       ┃  │ ← Level 1
-│  ┃  ↑ 23% vs last month                    ┃  │   (Biggest, boldest)
-│  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  │
+│  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓     │
+│  ┃  NGN 45.3M Revenue | 1,543 Orders      ┃     │ ← Level 1
+│  ┃  ↑ 23% vs last month                   ┃     │   (Biggest, boldest)
+│  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛     │
 └─────────────────────────────────────────────────┘
 ```
 
@@ -99,14 +99,14 @@ Two dashboards with identical data:
 ```
 ┌───────────────────────────────────────────────┐
 │  Detailed Order Transactions                  │ ← Level 3
-│  ┌─────────┬──────────┬──────────┬─────────┐ │   (Smaller, detailed)
-│  │Order ID │ Customer │ Amount   │ Status  │ │
-│  ├─────────┼──────────┼──────────┼─────────┤ │
-│  │ 10423   │ Lagos    │ NGN 2.3K │ Shipped │ │
-│  │ 10424   │ Abuja    │ NGN 5.1K │ Pending │ │
-│  └─────────┴──────────┴──────────┴─────────┘ │
+│  ┌─────────┬──────────┬──────────┬─────────┐  │   (Smaller, detailed)
+│  │Order ID │ Customer │ Amount   │ Status  │  │
+│  ├─────────┼──────────┼──────────┼─────────┤  │
+│  │ 10423   │ Lagos    │ NGN 2.3K │ Shipped │  │
+│  │ 10424   │ Abuja    │ NGN 5.1K │ Pending │  │
+│  └─────────┴──────────┴──────────┴─────────┘  │
 │                                               │
-│  Last Updated: Jan 31, 2026 10:30 AM         │
+│  Last Updated: Jan 31, 2026 10:30 AM          │
 └───────────────────────────────────────────────┘
 ```
 
@@ -129,11 +129,11 @@ Two dashboards with identical data:
 ```
 ┌─────────────────────────────────────────┐
 │ ████████████████████████ [Scan 1]       │ ← Top KPIs (horizontal scan)
-│ ████                                     │ ← Left margin (vertical scan)
+│ ████                                    │ ← Left margin (vertical scan)
 │ ████  Chart 1    Chart 2    Chart 3     │ ← Mid-level charts (horizontal)
-│ ████                                     │ ← Continue left scan
+│ ████                                    │ ← Continue left scan
 │ ████  Chart 4    Chart 5                │ ← More analysis
-│ ████                                     │
+│ ████                                    │
 │ ████  Detailed Table                    │ ← Supporting details
 └─────────────────────────────────────────┘
      ↑
@@ -151,15 +151,15 @@ Two dashboards with identical data:
 ┌────────────────────────────────────────────────┐
 │ Revenue: 45M | Orders: 1.5K | AOV: 2.9K | ...  │ ← Scan 1: Top metrics
 ├────────────────────────────────────────────────┤
-│ TRENDS                                          │ ← Scan 2: Left labels
+│ TRENDS                                         │ ← Scan 2: Left labels
 │ [Monthly Revenue Time Series Chart]            │
 ├────────────────────────────────────────────────┤
-│ PERFORMANCE BY CATEGORY                         │
+│ PERFORMANCE BY CATEGORY                        │
 │ [Electronics] ███████████ NGN 12.3M            │ ← Scan 3: Mid content
 │ [Fashion]     ████████ NGN 8.7M                │
 │ [Home]        ████ NGN 4.2M                    │
 ├────────────────────────────────────────────────┤
-│ GEOGRAPHIC BREAKDOWN                            │
+│ GEOGRAPHIC BREAKDOWN                           │
 │ [Lagos]       ████████████████ 45%             │
 │ [Abuja]       ███████ 23%                      │
 │ [Rivers]      ████ 12%                         │
@@ -181,14 +181,14 @@ Two dashboards with identical data:
 **Visual:**
 ```
 ┌───────────────────────────────────────────┐
-│ ①───────────────────────→②                │
-│  \                        │                │
-│   \                       ↓                │
-│    \                  [Main Chart]         │
-│     \                     │                │
-│      \                    │                │
-│       ↘                   ↓                │
-│        ③──────────────→④                  │
+│ ①───────────────────────→②               │
+│  \                        │               │
+│   \                       ↓               │
+│    \                  [Main Chart]        │
+│     \                     │               │
+│      \                    │               │
+│       ↘                   ↓               │
+│        ③──────────────→④                 │
 └───────────────────────────────────────────┘
 ```
 
@@ -201,13 +201,13 @@ Two dashboards with identical data:
 **Nigerian Business Example: CEO Daily Snapshot**
 ```
 ┌─────────────────────────────────────────────────┐
-│ Daily Sales Dashboard - Lagos Region       [Logo]│ ① → ②
-│         ↓                                    ↓    │
-│  NGN 2.3M Revenue                     432 Orders │
+│ Daily Sales Dashboard - Lagos Region      [Logo]│ ① → ②
+│         ↓                                    ↓  │
+│  NGN 2.3M Revenue                     432 Orders│
 │  ↑ 15% vs yesterday                  ↑ 8% growth│
-│         ↓                                         │
-│    [Today's Revenue by Hour - Line Chart]        │ Main focus
-│         ↓                                         │
+│         ↓                                       │
+│    [Today's Revenue by Hour - Line Chart]       │ Main focus
+│         ↓                                       │
 │ Top Product: Electronics ───→ Alert: Low Stock! │ ③ → ④
 │ [Bar chart mini view]           [⚠ Warning icon]│
 └─────────────────────────────────────────────────┘
@@ -231,7 +231,7 @@ Two dashboards with identical data:
 ```
 ┌────────────────────────────────────────┐
 │                                        │
-│        Single Large Chart (12 cols)   │
+│        Single Large Chart (12 cols)    │
 │                                        │
 └────────────────────────────────────────┘
 ```
@@ -568,12 +568,12 @@ Two dashboards with identical data:
 **Problem:** Charts placed wherever they fit, no alignment
 ```
 ┌────────────────────────┐
-│  ┌───┐     ┌──────┐   │ ← Different sizes
-│  │KPI│   ┌─┤Chart │   │ ← Overlapping
-│  └───┘   │ └──────┘   │ ← No alignment
-│      ┌───┴──┐         │
-│      │Table │    ┌──┐ │ ← Random gaps
-│      └──────┘    └──┘ │
+│  ┌───┐     ┌──────┐    │ ← Different sizes
+│  │KPI│   ┌─┤Chart │    │ ← Overlapping
+│  └───┘   │ └──────┘    │ ← No alignment
+│      ┌───┴──┐          │
+│      │Table │    ┌──┐  │ ← Random gaps
+│      └──────┘    └──┘  │
 └────────────────────────┘
 ```
 
@@ -663,12 +663,12 @@ Two dashboards with identical data:
 ```
 ┌─────────────────────────────────────────┐
 │ Daily Sales - January 31, 2026    [Menu]│ ① Top bar
-│         ↓                                │
+│         ↓                               │
 │  NGN 2.3M Revenue      ↑ 432 Orders     │ ② Key metrics
 │  ↑ 15% vs yesterday    ↑ 8% growth      │
-│         ↓                                │
+│         ↓                               │
 │  [Today's Hourly Revenue Trend Chart]   │ Main visual
-│         ↓                                │
+│         ↓                               │
 │  Top: Electronics      ⚠ Stock Alert    │ ③ Action items
 │  [Mini bar chart]      Low: Laptops     │
 └─────────────────────────────────────────┘
@@ -691,22 +691,22 @@ Two dashboards with identical data:
 ┌──────────────────────────────────────────┐
 │ Weekly Performance - Week 4, Jan 2026    │ Header
 ├──────────────────────────────────────────┤
-│ Rev: 12.3M │ Orders: 4.5K │ AOV: 2.7K   │ ← KPI row
+│ Rev: 12.3M │ Orders: 4.5K │ AOV: 2.7K    │ ← KPI row
 ├──────────────────────────────────────────┤
-│ TRENDS                                    │ ← Section 1
+│ TRENDS                                   │ ← Section 1
 │ [Daily Revenue Bar Chart]                │
 │ [Daily Order Volume Line Chart]          │
 ├──────────────────────────────────────────┤
-│ CATEGORY PERFORMANCE                      │ ← Section 2
+│ CATEGORY PERFORMANCE                     │ ← Section 2
 │ Electronics  ████████████ NGN 5.2M       │
 │ Fashion      ████████ NGN 3.1M           │
 │ Home         ████ NGN 2.0M               │
 ├──────────────────────────────────────────┤
-│ GEOGRAPHIC BREAKDOWN                      │ ← Section 3
+│ GEOGRAPHIC BREAKDOWN                     │ ← Section 3
 │ [Map of Nigeria with color intensity]    │
 │ Top: Lagos (45%) | Abuja (23%)           │
 ├──────────────────────────────────────────┤
-│ TOP PRODUCTS TABLE                        │ ← Section 4 (details)
+│ TOP PRODUCTS TABLE                       │ ← Section 4 (details)
 │ [Sortable table with 20 products]        │
 └──────────────────────────────────────────┘
 ```
@@ -731,15 +731,15 @@ Two dashboards with identical data:
 │ 8,765      │ 1,234      │ 7,531      │
 ├────────────┴────────────┴────────────┤
 │                                      │ ← Row 2: Full width
-│  Customer Acquisition Trend (12)    │   (12 cols)
-│  [Time series chart]                │
+│  Customer Acquisition Trend (12)     │   (12 cols)
+│  [Time series chart]                 │
 ├──────────────────┬───────────────────┤
 │ Customers by     │ Customers by      │ ← Row 3: Two halves
 │ State (6)        │ Age Group (6)     │   (6 cols each)
 │ [Geo map]        │ [Pie chart]       │
 ├──────────────────┴───────────────────┤
-│ Customer Segmentation Table (12)    │ ← Row 4: Full width
-│ [Detailed table with RFM scores]    │
+│ Customer Segmentation Table (12)     │ ← Row 4: Full width
+│ [Detailed table with RFM scores]     │
 └──────────────────────────────────────┘
 ```
 
