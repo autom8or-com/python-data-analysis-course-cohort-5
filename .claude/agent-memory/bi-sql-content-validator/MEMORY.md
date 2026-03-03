@@ -118,3 +118,45 @@ Based on `EXTRACT(DAY FROM (order_delivered_customer_date - order_purchase_times
 3. **Handle NULLs** in delivery dates when calculating delivery performance
 4. **Marketing data limitations**: Cannot directly link MQLs to actual order revenue
 5. **Realistic thresholds**: Adjust CLV tiers based on actual data distribution ($5K not $500K)
+
+## SQL Syntax Gotchas (PostgreSQL / Supabase)
+
+- `ROUND()` on a `double precision` (real) value will error. Always cast first: `ROUND(value::numeric, 2)`
+- Division of two `double precision` values produces `double precision` — cast the whole expression: `(a / b)::numeric`
+- `DATE_PART('day', timestamp - timestamp)` returns double precision — cast when passing to ROUND
+- `EXTRACT(...)` returns double precision — cast to int if using as integer: `::int`
+- LAG/LEAD/NTILE are not supported in Looker Studio calculated fields — pre-calculate in SQL
+
+## Row Multiplication Warning (Critical)
+
+Joining `olist_order_items_dataset` (many rows per order) to `olist_order_payments_dataset` and then doing SUM(payment_value) inflates revenue. Validated impact: SP state revenue shows $7.4M (wrong) vs $5.77M (correct) — a 28% inflation.
+
+**Fix**: Always pre-aggregate payments per order in a CTE before joining with order items:
+```sql
+WITH order_revenue AS (
+    SELECT order_id, SUM(payment_value) AS order_revenue
+    FROM olist_order_payments_dataset GROUP BY order_id
+)
+-- Then join order_revenue to your other tables
+```
+
+## Delivery Performance: Estimated vs Actual
+
+Two distinct delivery metrics exist:
+1. **Actual delivery time** = `DATE_PART('day', order_delivered_customer_date - order_purchase_timestamp)` — avg ~12-22 days per seller
+2. **Lateness vs estimate** = `DATE_PART('day', order_delivered_customer_date - order_estimated_delivery_date)` — 92% are "On Time" because Olist sets conservative estimates (avg 12.7 days early)
+
+The "On Time vs Estimated" metric tells a very different story from "days from purchase to delivery". Both are valid but measure different things.
+
+## Revenue Cross-Check Finding
+
+`SUM(payment_value)` is ~22.73% higher than `SUM(price + freight_value)` for delivered orders. This is expected:
+- payment_value includes gift cards, vouchers, and installment fees
+- Always use payment_value as the authoritative revenue source
+
+## Dataset Temporal Boundaries
+
+- Sales: Only 8 orders in final 30 days (Sep–Oct 2018) — effective active range Sep 2016–Aug 2018
+- Marketing: Ends May 2018, 5-month gap before sales data ends
+- 2016 is startup period (266 orders total) — exclude from trend analysis
+- Dec 2016: Only 1 order ($19.62) — causes extreme MoM artifacts in any time series
