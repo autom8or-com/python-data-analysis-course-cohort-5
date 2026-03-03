@@ -71,15 +71,17 @@ Exercises (~25-30 min) include:
 - Checklists (optimization, performance, accessibility)
 - Quick decision trees ("Which control to use?")
 
-## Olist Dataset Specifics (Week 15 Validation)
+## Olist Dataset Specifics (Weeks 15-16 Validation)
 
 ### Critical Data Corrections
 1. **CLV Tiers:** Use $5K/$2K/$500 thresholds (NOT $500K - top customer is $13.6K)
 2. **Customer ID:** Always use `customer_unique_id` for aggregation (NOT `customer_id`)
 3. **Marketing ROI:** Campaign cost data missing - use simulated values with disclaimers
-4. **Delivery Stats:** 75% delayed/critical - major operational issue to highlight
-5. **Declared Revenue:** All zeros in closed_deals - avoid using this field
-6. **Date Ranges:** Sales (Sep 2016-Oct 2018), Marketing (Jun 2017-Jun 2018)
+4. **Delivery Stats (vs 7-day threshold):** 75% delayed/critical (Week 15 framing)
+5. **Delivery Stats (vs Olist estimate):** 92% On Time — Olist sets conservative estimates, avg delivery 12.7 days EARLY (Week 16 framing — different metric, not a contradiction)
+6. **Declared Revenue:** All zeros in closed_deals - avoid using this field
+7. **Date Ranges:** Sales (Sep 2016-Oct 2018), Marketing (Jun 2017-May 2018)
+8. **Revenue Inflation Risk:** Joining order_items without pre-aggregating payments inflates SP revenue 28% ($7.4M vs $5.77M correct)
 
 ### Schema Tables
 - **olist_sales_data_set:** orders, order_items, customers, products, sellers, payments, reviews, geolocation
@@ -165,10 +167,44 @@ Exercises (~25-30 min) include:
 - Actionable insights (highlighting anomalies, recommendations)
 - Executive summary patterns
 
+## Week 16 Specific Learnings
+
+### Production Dashboard Focus
+- Row multiplication problem: joining order_items without pre-aggregating payments inflates revenue 28%
+- Pre-aggregated queries (5 data sources: 2a-2e from validation report) reduce rows from 99K to 27
+- Extract vs Live: Always use Extract for Olist (historical data, no real-time needed)
+- Custom SQL in Looker: No trailing semicolons, schema.table prefix required
+
+### Sharing and Permissions Focus
+- Owner's credentials is mandatory when sharing with non-Supabase users (all external stakeholders)
+- Shareable link URL (from "Manage access" dialog) != Edit URL from browser address bar
+- Scheduled email delivery: PDF for executives (Page 1 only, Monday 7AM); Link for analysts (all pages, Friday 4PM)
+- Embed: Must enable File > Embed report first; responsive wrapper uses padding-bottom CSS trick
+
+### Documentation Requirements (Week 16 Final Project)
+- 6 criteria: Data Connection 10%, Calculated Fields 20%, Visualizations 25%, Interactivity 20%, Design 15%, Sharing+Docs 10%
+- Documentation has 5 sections: Overview, Data Sources, Calculated Fields, Filters/Controls, Maintenance
+- Known limitations (7 total) must all be acknowledged in student documentation
+- 5-minute live presentation: features demo + 2-3 business insights + 1 technical decision + Q&A
+
+### Resource File Patterns (Week 16)
+- Wednesday resources: `performance_optimization_guide.md` (SQL anti-patterns, benchmarks, decision tree) + `data_quality_checklist.md` (field-level audit results, production certification checklist)
+- Thursday resources: `sharing_permissions_reference.md` (all sharing methods, permission levels, troubleshooting) + `dashboard_documentation_template.md` (fill-in template with pre-filled Olist examples)
+
+### Context7 Reliability
+- Context7 API sometimes fails with "TypeError: fetch failed" network error
+- Fallback: Rely on training knowledge + thorough validation report reading + Week 15 structural reference
+- Always verify feature behavior (e.g., scheduled delivery, embed) in the validation report or README rather than assuming
+
+## Completed Weeks Summary
+- Week 13: Fundamentals (Wed: 3 notebooks, Thu: 4 lectures) - COMPLETE
+- Week 14: Interactive Dashboards (Wed: 4 notebooks, Thu: 4 lectures + solutions) - COMPLETE
+- Week 15: Advanced Analytics + Storytelling (Wed: 4 notebooks, Thu: 4 lectures) - COMPLETE
+- Week 16: Production Dashboards (Wed: 4 notebooks + 2 exercises + 2 resources; Thu: 4 lectures + 2 exercises + 2 resources) - COMPLETE
+
 ## Links to Related Memory Files
 - (Future) `debugging.md` - Common Looker Studio errors and fixes
 - (Future) `patterns.md` - Reusable dashboard layout templates
-- (Future) `metrics_library.md` - Standard calculated field formulas
 
 ---
-**Last Updated:** 2026-02-07 | Week 15 Development Session
+**Last Updated:** 2026-03-03 | Week 16 Development Session
