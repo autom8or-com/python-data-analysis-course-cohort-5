@@ -3,6 +3,8 @@ mcp.json
 cipher.yml
 cipher.ym.env
 
+.claude/settings.local.json
+
 # Python
 __pycache__/
 *.py[cod]

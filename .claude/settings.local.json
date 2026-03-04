@@ -24,7 +24,11 @@
       "mcp__MCP_DOCKER__mcp-find",
       "mcp__plugin_context7_context7__resolve-library-id",
       "mcp__plugin_context7_context7__query-docs",
-      "Skill(commit-commands:commit)"
+      "Skill(commit-commands:commit)",
+      "mcp__plugin_supabase_supabase__list_projects",
+      "mcp__plugin_supabase_supabase__execute_sql",
+      "Bash(git status:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []
